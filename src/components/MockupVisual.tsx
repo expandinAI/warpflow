@@ -169,7 +169,7 @@ export function MockupVisual() {
           initial={{ opacity: 0, scale: 0.95, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.8, ease: "easeOut" }}
-          className="absolute bottom-6 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] md:w-[90%]"
+          className="absolute bottom-6 left-4 right-4 md:left-[5%] md:right-[5%] md:w-auto"
         >
           <div className="relative rounded-2xl border border-accent/30 bg-bg-primary/90 backdrop-blur-xl overflow-hidden shadow-glow">
             {/* Glow effect behind */}
