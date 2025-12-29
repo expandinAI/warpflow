@@ -169,7 +169,7 @@ export function MockupVisual() {
           initial={{ opacity: 0, scale: 0.95, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.8, ease: "easeOut" }}
-          className="absolute bottom-6 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] md:w-[80%]"
+          className="absolute bottom-6 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] md:w-[90%]"
         >
           <div className="relative rounded-2xl border border-accent/30 bg-bg-primary/90 backdrop-blur-xl overflow-hidden shadow-glow">
             {/* Glow effect behind */}
@@ -230,7 +230,7 @@ export function MockupVisual() {
               </div>
 
               {/* Keyboard shortcut hint */}
-              <div className="hidden sm:flex items-center gap-1 text-xs text-text-secondary">
+              <div className="hidden md:flex items-center gap-1 text-xs text-text-secondary shrink-0">
                 <kbd className="px-1.5 py-0.5 rounded bg-white/5 border border-white/10">
                   {"\u2318"}
                 </kbd>
