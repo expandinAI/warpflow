@@ -9,13 +9,13 @@ const geistSans = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "WarpFlow - The AI Overlay for Your Mac",
-  description: "Context-aware. Voice-first. Zero switching. Coming 2026.",
-  keywords: ["AI", "Mac", "macOS", "productivity", "overlay", "voice", "assistant"],
+  title: "WarpFlow - The AI Copilot for Your Mac",
+  description: "The AI Copilot for your Mac. Context-aware. Voice-first. Zero switching. Coming 2026.",
+  keywords: ["AI", "Mac", "macOS", "productivity", "copilot", "voice", "assistant", "overlay"],
   authors: [{ name: "WarpFlow" }],
   openGraph: {
     title: "WarpFlow - Warp into Flow",
-    description: "The AI overlay for your Mac. Context-aware. Voice-first. Zero switching.",
+    description: "The AI Copilot for your Mac. Context-aware. Voice-first. Zero switching.",
     url: "https://warpflow.app",
     siteName: "WarpFlow",
     type: "website",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "WarpFlow - Warp into Flow",
-    description: "The AI overlay for your Mac. Context-aware. Voice-first. Zero switching.",
+    description: "The AI Copilot for your Mac. Context-aware. Voice-first. Zero switching.",
   },
 };
 
