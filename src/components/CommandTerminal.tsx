@@ -148,7 +148,7 @@ export function CommandTerminal() {
             <div className="w-3 h-3 rounded-full bg-[#28c840]" />
           </div>
           <div className="flex-1 text-center">
-            <span className="text-xs text-text-secondary font-mono">WarpFlow Terminal</span>
+            <span className="text-xs text-text-secondary font-mono">Warp Flow Terminal</span>
           </div>
           <div className="flex items-center gap-1">
             <span className="relative flex h-2 w-2">

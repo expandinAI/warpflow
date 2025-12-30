@@ -19,7 +19,7 @@ const visionItems = [
   {
     year: "2028",
     title: "Predictive",
-    description: "WarpFlow knows what you need before you ask.",
+    description: "Warp Flow knows what you need before you ask.",
     icon: "M13 10V3L4 14h7v7l9-11h-7z",
   },
 ];

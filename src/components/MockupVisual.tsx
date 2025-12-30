@@ -164,7 +164,7 @@ export function MockupVisual() {
           </div>
         </div>
 
-        {/* Blur overlay when WarpFlow is active */}
+        {/* Blur overlay when Warp Flow is active */}
         <AnimatePresence>
           {phase !== "idle" && (
             <motion.div
@@ -177,7 +177,7 @@ export function MockupVisual() {
           )}
         </AnimatePresence>
 
-        {/* WarpFlow Overlay */}
+        {/* Warp Flow Overlay */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -191,7 +191,7 @@ export function MockupVisual() {
             {/* Mode Toggle */}
             <div className="flex items-center justify-between px-3 md:px-4 py-2.5 md:py-3 border-b border-white/5">
               <div className="flex items-center gap-2 md:gap-3">
-                {/* WarpFlow icon */}
+                {/* Warp Flow icon */}
                 <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-gradient-to-br from-accent to-cyan-400 flex items-center justify-center shadow-md shadow-accent/20">
                   <svg
                     width="14"

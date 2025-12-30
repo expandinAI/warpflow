@@ -43,7 +43,7 @@ export async function POST(request: NextRequest) {
     await resend.contacts.create({
       email,
       audienceId,
-      firstName: "WarpFlow",
+      firstName: "Warp Flow",
     });
 
     return NextResponse.json({ success: true });
