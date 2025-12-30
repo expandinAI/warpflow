@@ -190,7 +190,7 @@ export function BentoGrid() {
                 Draft Reply
               </h3>
               <p className="text-xs md:text-sm text-text-secondary mb-4">
-                Say what you want. WarpFlow writes it.
+                Say what you want. Warp Flow writes it.
               </p>
 
               {/* Typing visual */}

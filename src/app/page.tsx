@@ -57,7 +57,7 @@ export default function Home() {
             </svg>
           </motion.div>
           <span className="text-text-primary font-semibold text-lg md:text-xl tracking-tight">
-            WarpFlow
+            Warp Flow
           </span>
         </motion.div>
 
@@ -292,7 +292,7 @@ export default function Home() {
                   <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
                 </svg>
               </div>
-              <span className="text-text-primary font-medium text-sm md:text-base">WarpFlow</span>
+              <span className="text-text-primary font-medium text-sm md:text-base">Warp Flow</span>
             </div>
 
             {/* Info */}
@@ -306,7 +306,7 @@ export default function Home() {
 
             {/* Copyright */}
             <p className="text-[10px] md:text-xs text-text-secondary/40">
-              &copy; {new Date().getFullYear()} WarpFlow
+              &copy; {new Date().getFullYear()} Warp Flow
             </p>
           </div>
         </div>

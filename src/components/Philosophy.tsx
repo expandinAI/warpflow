@@ -23,7 +23,7 @@ const principles = [
   },
   {
     title: "Context-aware",
-    description: "WarpFlow sees what you see. No copy-paste gymnastics. No explanations needed.",
+    description: "Warp Flow sees what you see. No copy-paste gymnastics. No explanations needed.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10" />
@@ -87,7 +87,7 @@ export function Philosophy() {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-text-primary leading-tight mb-8">
             Why we&apos;re building{" "}
             <span className="bg-gradient-to-r from-accent via-blue-400 to-purple-400 bg-clip-text text-transparent">
-              WarpFlow
+              Warp Flow
             </span>
           </h2>
         </motion.div>
@@ -129,7 +129,7 @@ export function Philosophy() {
                 transition={{ duration: 0.6, delay: 0.5 }}
                 className="text-2xl md:text-3xl text-text-primary font-medium"
               >
-                WarpFlow eliminates the path.
+                Warp Flow eliminates the path.
               </motion.p>
 
               <motion.p
@@ -137,7 +137,7 @@ export function Philosophy() {
                 animate={isInView ? { opacity: 1 } : {}}
                 transition={{ duration: 0.6, delay: 0.7 }}
               >
-                You say what you want. WarpFlow takes you there. You stay in{" "}
+                You say what you want. Warp Flow takes you there. You stay in{" "}
                 <span className="bg-gradient-to-r from-accent to-blue-400 bg-clip-text text-transparent font-semibold">
                   flow
                 </span>

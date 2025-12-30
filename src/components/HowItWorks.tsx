@@ -7,7 +7,7 @@ const steps = [
   {
     number: "1",
     title: "Start a Warp",
-    description: "⌘J from anywhere. WarpFlow sees your context – which app, which document, which email.",
+    description: "⌘J from anywhere. Warp Flow sees your context – which app, which document, which email.",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
@@ -77,7 +77,7 @@ export function HowItWorks() {
             You choose the destination.
             <br />
             <span className="bg-gradient-to-r from-accent via-blue-400 to-purple-400 bg-clip-text text-transparent">
-              WarpFlow knows the way.
+              Warp Flow knows the way.
             </span>
           </h2>
 
