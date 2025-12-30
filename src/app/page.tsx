@@ -6,7 +6,7 @@ import { GrainOverlay } from "@/components/GrainOverlay";
 import { WaitlistForm } from "@/components/WaitlistForm";
 import { HowItWorks } from "@/components/HowItWorks";
 import { Philosophy } from "@/components/Philosophy";
-import { WarpsPreview } from "@/components/WarpsPreview";
+import { BentoGrid } from "@/components/BentoGrid";
 import { MockupVisual } from "@/components/MockupVisual";
 import { CursorGlow } from "@/components/CursorGlow";
 import { MeshGradient } from "@/components/MeshGradient";
@@ -185,9 +185,9 @@ export default function Home() {
       </div>
 
       {/* ============================================ */}
-      {/* WARPS PREVIEW SECTION */}
+      {/* BENTO GRID - WARPS PREVIEW */}
       {/* ============================================ */}
-      <WarpsPreview />
+      <BentoGrid />
 
       {/* ============================================ */}
       {/* FINAL CTA SECTION */}
