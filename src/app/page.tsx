@@ -1,80 +1,31 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef, useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { useRef } from "react";
 import { GrainOverlay } from "@/components/GrainOverlay";
 import { WaitlistForm } from "@/components/WaitlistForm";
 import { HowItWorks } from "@/components/HowItWorks";
 import { Philosophy } from "@/components/Philosophy";
 import { WarpsPreview } from "@/components/WarpsPreview";
 import { MockupVisual } from "@/components/MockupVisual";
-
-// Only load heavy effects on desktop
-function useIsMobile() {
-  const [isMobile, setIsMobile] = useState(true);
-  useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 768);
-    check();
-    window.addEventListener("resize", check);
-    return () => window.removeEventListener("resize", check);
-  }, []);
-  return isMobile;
-}
+import { CursorGlow } from "@/components/CursorGlow";
+import { MeshGradient } from "@/components/MeshGradient";
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll();
-  const isMobile = useIsMobile();
-
-  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
 
   return (
     <main
       ref={containerRef}
       className="relative min-h-screen flex flex-col items-center overflow-hidden bg-[#030303]"
     >
+      {/* Cursor glow effect - desktop only */}
+      <CursorGlow />
+
       <GrainOverlay />
 
-      {/* Simplified gradient background */}
-      <motion.div
-        style={isMobile ? {} : { y: bgY }}
-        className="absolute inset-0 -z-10 overflow-hidden"
-      >
-        <motion.div
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.1, 0.15, 0.1],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute -top-1/4 left-1/2 -translate-x-1/2 w-[600px] md:w-[1000px] h-[600px] md:h-[800px] bg-accent rounded-full blur-[120px] md:blur-[180px]"
-        />
-        <motion.div
-          animate={{
-            opacity: [0.05, 0.1, 0.05],
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute bottom-0 right-0 w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-purple-500 rounded-full blur-[100px] md:blur-[150px]"
-        />
-        <motion.div
-          animate={{
-            opacity: [0.05, 0.08, 0.05],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute bottom-1/4 left-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-cyan-500 rounded-full blur-[80px] md:blur-[130px]"
-        />
-      </motion.div>
+      {/* Animated mesh gradient background */}
+      <MeshGradient />
 
       {/* ============================================ */}
       {/* HERO SECTION */}
@@ -135,13 +86,44 @@ export default function Home() {
           >
             Warp into{" "}
             <span className="relative inline-block">
-              <span className="bg-gradient-to-r from-accent via-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                Flow
-              </span>
+              {/* Animated gradient text */}
               <motion.span
-                className="absolute -inset-1 md:-inset-2 bg-gradient-to-r from-accent/20 via-cyan-400/15 to-purple-400/20 blur-2xl -z-10 rounded-full"
-                animate={{ opacity: [0.5, 0.8, 0.5] }}
-                transition={{ duration: 4, repeat: Infinity }}
+                className="bg-gradient-to-r from-accent via-cyan-400 to-purple-400 bg-clip-text text-transparent bg-[length:200%_auto]"
+                animate={{
+                  backgroundPosition: ["0% center", "200% center"],
+                }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+              >
+                Flow
+              </motion.span>
+              {/* Pulsing glow behind text */}
+              <motion.span
+                className="absolute -inset-2 md:-inset-4 bg-gradient-to-r from-accent/30 via-cyan-400/20 to-purple-400/30 blur-2xl -z-10 rounded-full"
+                animate={{
+                  opacity: [0.4, 0.7, 0.4],
+                  scale: [0.95, 1.05, 0.95],
+                }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              />
+              {/* Shimmer line */}
+              <motion.span
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -z-5"
+                style={{
+                  maskImage: "linear-gradient(to right, transparent, black, transparent)",
+                  WebkitMaskImage: "linear-gradient(to right, transparent, black, transparent)",
+                }}
+                initial={{ x: "-100%" }}
+                animate={{ x: "100%" }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  repeatDelay: 3,
+                  ease: "easeInOut"
+                }}
               />
             </span>
           </motion.h1>
