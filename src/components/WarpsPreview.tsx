@@ -121,13 +121,19 @@ export function WarpsPreview() {
               onMouseLeave={() => setHoveredIndex(null)}
               className="group relative"
             >
-              <div className="relative h-full p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-white/20 transition-all duration-500 overflow-hidden">
-                {/* Gradient glow on hover */}
+              <div
+                className={`relative h-full p-8 rounded-2xl border transition-all duration-500 overflow-hidden ${
+                  hoveredIndex === index
+                    ? "bg-gradient-to-br border-white/30 " + warp.gradient
+                    : "bg-white/[0.02] border-white/5 hover:border-white/20"
+                }`}
+              >
+                {/* Dark overlay for text readability on gradient */}
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: hoveredIndex === index ? 1 : 0 }}
                   transition={{ duration: 0.3 }}
-                  className={`absolute inset-0 bg-gradient-to-br ${warp.gradient} opacity-[0.05]`}
+                  className="absolute inset-0 bg-black/40"
                 />
 
                 {/* Top glow line */}
@@ -135,10 +141,10 @@ export function WarpsPreview() {
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: hoveredIndex === index ? 1 : 0 }}
                   transition={{ duration: 0.4 }}
-                  className={`absolute top-0 left-0 right-0 h-px bg-gradient-to-r ${warp.gradient} origin-left`}
+                  className="absolute top-0 left-0 right-0 h-px bg-white/50 origin-left"
                 />
 
-                <div className="relative">
+                <div className="relative z-10">
                   {/* Icon */}
                   <motion.div
                     initial={{ scale: 0 }}
@@ -148,25 +154,37 @@ export function WarpsPreview() {
                       stiffness: 300,
                       delay: 0.4 + index * 0.15
                     }}
-                    className={`w-12 h-12 rounded-xl bg-gradient-to-br ${warp.gradient} flex items-center justify-center mb-6 shadow-lg`}
+                    className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 shadow-lg transition-all duration-300 ${
+                      hoveredIndex === index
+                        ? "bg-white/20 backdrop-blur-sm"
+                        : `bg-gradient-to-br ${warp.gradient}`
+                    }`}
                   >
                     <span className="text-white">{warp.icon}</span>
                   </motion.div>
 
                   {/* Title with badge */}
                   <div className="flex items-center gap-3 mb-3">
-                    <h3 className="text-xl font-semibold text-text-primary">
+                    <h3 className={`text-xl font-semibold transition-colors duration-300 ${
+                      hoveredIndex === index ? "text-white" : "text-text-primary"
+                    }`}>
                       {warp.title}
                     </h3>
                     {!warp.available && (
-                      <span className="px-2 py-0.5 text-xs rounded-full bg-white/5 border border-white/10 text-text-secondary">
+                      <span className={`px-2 py-0.5 text-xs rounded-full border transition-colors duration-300 ${
+                        hoveredIndex === index
+                          ? "bg-white/20 border-white/30 text-white"
+                          : "bg-white/5 border-white/10 text-text-secondary"
+                      }`}>
                         coming soon
                       </span>
                     )}
                   </div>
 
                   {/* Description */}
-                  <p className="text-text-secondary leading-relaxed mb-6">
+                  <p className={`leading-relaxed mb-6 transition-colors duration-300 ${
+                    hoveredIndex === index ? "text-white/90" : "text-text-secondary"
+                  }`}>
                     {warp.description}
                   </p>
 
@@ -180,10 +198,10 @@ export function WarpsPreview() {
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
-                    <div className="pt-4 border-t border-white/5">
+                    <div className="pt-4 border-t border-white/20">
                       <div className="flex items-start gap-3">
-                        <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${warp.gradient} mt-2 shrink-0`} />
-                        <p className="text-sm text-text-secondary/80 italic">
+                        <div className="w-1.5 h-1.5 rounded-full bg-white mt-2 shrink-0" />
+                        <p className="text-sm text-white/80 italic">
                           &ldquo;{warp.preview}&rdquo;
                         </p>
                       </div>

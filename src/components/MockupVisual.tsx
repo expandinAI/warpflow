@@ -252,31 +252,38 @@ export function MockupVisual() {
                     {/* Warps Grid */}
                     {phase === "selecting" && (
                       <div className="grid grid-cols-2 gap-2 md:gap-2.5">
-                        {warps.map((warp, i) => (
-                          <motion.div
-                            key={warp.label}
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            animate={{
-                              opacity: 1,
-                              scale: 1,
-                              borderColor: currentWorkflow.selectedWarp === i ? "rgba(0, 102, 255, 0.5)" : "rgba(255,255,255,0.05)"
-                            }}
-                            transition={{ delay: i * 0.05 }}
-                            className={`p-2.5 md:p-3 rounded-lg border bg-white/[0.02] cursor-pointer transition-all ${
-                              currentWorkflow.selectedWarp === i
-                                ? "border-accent/50 bg-accent/5"
-                                : "border-white/5 hover:border-white/10"
-                            }`}
-                          >
-                            <div className="flex items-center gap-2">
-                              <span className="text-base md:text-lg">{warp.icon}</span>
-                              <div>
-                                <div className="text-xs md:text-sm font-medium text-text-primary">{warp.label}</div>
-                                <div className="text-[9px] md:text-[10px] text-text-secondary">{warp.description}</div>
+                        {warps.map((warp, i) => {
+                          const isSelected = currentWorkflow.selectedWarp === i;
+                          return (
+                            <motion.div
+                              key={warp.label}
+                              initial={{ opacity: 0, scale: 0.95 }}
+                              animate={{
+                                opacity: 1,
+                                scale: 1,
+                                borderColor: isSelected ? "rgba(0, 102, 255, 0.6)" : "rgba(255,255,255,0.05)"
+                              }}
+                              transition={{ delay: i * 0.05 }}
+                              className={`p-2.5 md:p-3 rounded-lg border cursor-pointer transition-all ${
+                                isSelected
+                                  ? "border-accent/60 bg-accent/15"
+                                  : "border-white/5 bg-white/[0.02] hover:border-white/10"
+                              }`}
+                            >
+                              <div className="flex items-center gap-2">
+                                <span className="text-base md:text-lg">{warp.icon}</span>
+                                <div>
+                                  <div className={`text-xs md:text-sm font-medium ${
+                                    isSelected ? "text-white" : "text-text-primary"
+                                  }`}>{warp.label}</div>
+                                  <div className={`text-[9px] md:text-[10px] ${
+                                    isSelected ? "text-white/70" : "text-text-secondary"
+                                  }`}>{warp.description}</div>
+                                </div>
                               </div>
-                            </div>
-                          </motion.div>
-                        ))}
+                            </motion.div>
+                          );
+                        })}
                       </div>
                     )}
 
