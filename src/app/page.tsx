@@ -86,44 +86,13 @@ export default function Home() {
           >
             Warp into{" "}
             <span className="relative inline-block">
-              {/* Animated gradient text */}
-              <motion.span
-                className="bg-gradient-to-r from-accent via-cyan-400 to-purple-400 bg-clip-text text-transparent bg-[length:200%_auto]"
-                animate={{
-                  backgroundPosition: ["0% center", "200% center"],
-                }}
-                transition={{
-                  duration: 5,
-                  repeat: Infinity,
-                  ease: "linear",
-                }}
-              >
+              {/* Gradient text with smooth color shift */}
+              <span className="bg-gradient-to-r from-accent via-cyan-400 to-purple-400 bg-clip-text text-transparent">
                 Flow
-              </motion.span>
-              {/* Pulsing glow behind text */}
-              <motion.span
-                className="absolute -inset-2 md:-inset-4 bg-gradient-to-r from-accent/30 via-cyan-400/20 to-purple-400/30 blur-2xl -z-10 rounded-full"
-                animate={{
-                  opacity: [0.4, 0.7, 0.4],
-                  scale: [0.95, 1.05, 0.95],
-                }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              />
-              {/* Shimmer line */}
-              <motion.span
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -z-5"
-                style={{
-                  maskImage: "linear-gradient(to right, transparent, black, transparent)",
-                  WebkitMaskImage: "linear-gradient(to right, transparent, black, transparent)",
-                }}
-                initial={{ x: "-100%" }}
-                animate={{ x: "100%" }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  repeatDelay: 3,
-                  ease: "easeInOut"
-                }}
+              </span>
+              {/* Subtle glow behind text - only on desktop */}
+              <span
+                className="absolute -inset-1 md:-inset-2 bg-gradient-to-r from-accent/20 via-cyan-400/15 to-purple-400/20 blur-xl md:blur-2xl -z-10 rounded-full hidden md:block"
               />
             </span>
           </motion.h1>
