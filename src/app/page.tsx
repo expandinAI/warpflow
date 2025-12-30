@@ -1,25 +1,32 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { GrainOverlay } from "@/components/GrainOverlay";
 import { WaitlistForm } from "@/components/WaitlistForm";
 import { HowItWorks } from "@/components/HowItWorks";
 import { Philosophy } from "@/components/Philosophy";
 import { WarpsPreview } from "@/components/WarpsPreview";
-import { ParticleField } from "@/components/ParticleField";
-import { InteractiveGrid } from "@/components/InteractiveGrid";
-import { WarpPortal } from "@/components/WarpPortal";
-import { FutureVision } from "@/components/FutureVision";
-import { CommandTerminal } from "@/components/CommandTerminal";
-import { GlitchText, TypewriterText } from "@/components/GlitchText";
+import { MockupVisual } from "@/components/MockupVisual";
+
+// Only load heavy effects on desktop
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(true);
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+  return isMobile;
+}
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll();
+  const isMobile = useIsMobile();
 
-  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-  const bgOpacity = useTransform(scrollYProgress, [0, 0.3], [1, 0.5]);
+  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
 
   return (
     <main
@@ -27,41 +34,26 @@ export default function Home() {
       className="relative min-h-screen flex flex-col items-center overflow-hidden bg-[#030303]"
     >
       <GrainOverlay />
-      <ParticleField />
-      <InteractiveGrid />
 
-      {/* Animated gradient background - Hero */}
+      {/* Simplified gradient background */}
       <motion.div
-        style={{ y: bgY, opacity: bgOpacity }}
+        style={isMobile ? {} : { y: bgY }}
         className="absolute inset-0 -z-10 overflow-hidden"
       >
         <motion.div
           animate={{
-            scale: [1, 1.3, 1],
-            opacity: [0.08, 0.15, 0.08],
+            scale: [1, 1.2, 1],
+            opacity: [0.1, 0.15, 0.1],
           }}
           transition={{
             duration: 10,
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[1000px] bg-accent rounded-full blur-[200px]"
+          className="absolute -top-1/4 left-1/2 -translate-x-1/2 w-[600px] md:w-[1000px] h-[600px] md:h-[800px] bg-accent rounded-full blur-[120px] md:blur-[180px]"
         />
         <motion.div
           animate={{
-            x: [0, 80, 0],
-            opacity: [0.05, 0.1, 0.05],
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute bottom-1/4 right-0 w-[700px] h-[700px] bg-purple-500 rounded-full blur-[180px]"
-        />
-        <motion.div
-          animate={{
-            x: [0, -50, 0],
             opacity: [0.05, 0.1, 0.05],
           }}
           transition={{
@@ -69,80 +61,86 @@ export default function Home() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-cyan-500 rounded-full blur-[150px]"
+          className="absolute bottom-0 right-0 w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-purple-500 rounded-full blur-[100px] md:blur-[150px]"
+        />
+        <motion.div
+          animate={{
+            opacity: [0.05, 0.08, 0.05],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute bottom-1/4 left-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-cyan-500 rounded-full blur-[80px] md:blur-[130px]"
         />
       </motion.div>
 
       {/* ============================================ */}
-      {/* HERO SECTION - IMMERSIVE */}
+      {/* HERO SECTION */}
       {/* ============================================ */}
-      <section className="relative w-full min-h-screen flex flex-col items-center justify-center px-6 py-24">
+      <section className="relative w-full min-h-screen flex flex-col px-5 md:px-6 pt-6 md:pt-8 pb-8">
         {/* Logo / Brand */}
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="absolute top-8 left-1/2 -translate-x-1/2 flex items-center gap-2.5"
+          transition={{ duration: 0.5 }}
+          className="flex items-center justify-center gap-2 md:gap-2.5"
         >
           <motion.div
-            className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-accent to-cyan-400 flex items-center justify-center shadow-lg shadow-accent/30"
-            whileHover={{ scale: 1.05, rotate: 5 }}
-            transition={{ type: "spring", stiffness: 400 }}
+            className="w-8 h-8 md:w-9 md:h-9 rounded-xl bg-gradient-to-br from-accent to-cyan-400 flex items-center justify-center shadow-lg shadow-accent/25"
+            whileHover={{ scale: 1.05 }}
           >
             <svg
-              width="20"
-              height="20"
+              width="16"
+              height="16"
               viewBox="0 0 24 24"
               fill="none"
               stroke="white"
               strokeWidth="2.5"
               strokeLinecap="round"
               strokeLinejoin="round"
+              className="md:w-[18px] md:h-[18px]"
             >
               <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
             </svg>
           </motion.div>
-          <span className="text-text-primary font-semibold text-xl tracking-tight">
+          <span className="text-text-primary font-semibold text-lg md:text-xl tracking-tight">
             WarpFlow
           </span>
         </motion.div>
 
         {/* Hero Content */}
-        <div className="relative z-10 max-w-5xl mx-auto text-center">
+        <div className="flex-1 flex flex-col items-center justify-center max-w-4xl mx-auto text-center mt-8 md:mt-0">
           {/* Badge */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl mb-10"
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="inline-flex items-center gap-2 px-3 md:px-4 py-1.5 md:py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm mb-6 md:mb-8"
           >
-            <span className="relative flex h-2.5 w-2.5">
+            <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
             </span>
-            <span className="text-sm text-text-secondary">
-              <TypewriterText text="Coming 2026 · The Future is Loading" delay={500} speed={40} />
-            </span>
+            <span className="text-xs md:text-sm text-text-secondary">Coming 2026</span>
           </motion.div>
 
           {/* Headline */}
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-6xl md:text-7xl lg:text-[6rem] font-bold tracking-tight text-text-primary leading-[1.05] mb-8"
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="text-[2.75rem] leading-[1.1] md:text-6xl lg:text-7xl font-bold tracking-tight text-text-primary"
           >
-            <GlitchText text="Warp" delay={800} /> into{" "}
+            Warp into{" "}
             <span className="relative inline-block">
               <span className="bg-gradient-to-r from-accent via-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                <GlitchText text="Flow" delay={1200} />
+                Flow
               </span>
               <motion.span
-                className="absolute -inset-2 bg-gradient-to-r from-accent/30 via-cyan-400/20 to-purple-400/30 blur-3xl -z-10 rounded-full"
-                animate={{
-                  opacity: [0.4, 0.7, 0.4],
-                  scale: [1, 1.1, 1],
-                }}
+                className="absolute -inset-1 md:-inset-2 bg-gradient-to-r from-accent/20 via-cyan-400/15 to-purple-400/20 blur-2xl -z-10 rounded-full"
+                animate={{ opacity: [0.5, 0.8, 0.5] }}
                 transition={{ duration: 4, repeat: Infinity }}
               />
             </span>
@@ -150,25 +148,22 @@ export default function Home() {
 
           {/* Subline */}
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-xl md:text-2xl text-text-secondary max-w-3xl mx-auto leading-relaxed mb-12"
+            transition={{ duration: 0.5, delay: 0.25 }}
+            className="mt-4 md:mt-6 text-base md:text-xl text-text-secondary max-w-lg md:max-w-2xl mx-auto leading-relaxed px-2"
           >
-            <span className="text-text-primary font-medium">
-              The AI Copilot for your Mac.
-            </span>
-            <br />
-            <span className="bg-gradient-to-r from-text-secondary via-text-primary to-text-secondary bg-clip-text">
-              Context-aware. Voice-first. Zero switching.
-            </span>
+            <span className="text-text-primary font-medium">The AI Copilot for your Mac.</span>
+            <br className="hidden md:block" />{" "}
+            <span className="text-text-secondary">Context-aware. Voice-first. Zero switching.</span>
           </motion.p>
 
           {/* Waitlist Form */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.35 }}
+            className="mt-8 md:mt-10 w-full max-w-md"
           >
             <WaitlistForm />
           </motion.div>
@@ -177,81 +172,45 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-            className="flex items-center justify-center gap-3 mt-8 text-sm text-text-secondary"
+            transition={{ duration: 0.5, delay: 0.45 }}
+            className="flex items-center justify-center gap-2 mt-4 md:mt-6 text-xs md:text-sm text-text-secondary"
           >
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              className="opacity-60"
-            >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" className="opacity-50">
               <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" />
             </svg>
             <span>macOS only</span>
-            <span className="text-white/20">·</span>
-            <span>Built for power users</span>
           </motion.div>
         </div>
 
-        {/* Scroll indicator */}
+        {/* Mockup Visual */}
+        <MockupVisual />
+
+        {/* Scroll hint - only on desktop */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 2, duration: 1 }}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2"
+          transition={{ delay: 2.5, duration: 1 }}
+          className="hidden md:flex justify-center mt-8"
         >
           <motion.div
-            animate={{ y: [0, 10, 0] }}
+            animate={{ y: [0, 6, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="flex flex-col items-center gap-3 text-text-secondary/40"
+            className="flex flex-col items-center gap-2 text-text-secondary/30"
           >
-            <span className="text-xs uppercase tracking-[0.3em] font-medium">Discover</span>
-            <motion.div
-              animate={{ opacity: [0.3, 1, 0.3] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              className="w-6 h-10 rounded-full border border-white/20 flex items-start justify-center p-2"
-            >
+            <div className="w-5 h-8 rounded-full border border-white/20 flex items-start justify-center p-1.5">
               <motion.div
-                animate={{ y: [0, 12, 0] }}
+                animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
-                className="w-1 h-2 rounded-full bg-accent"
+                className="w-1 h-1.5 rounded-full bg-accent/60"
               />
-            </motion.div>
+            </div>
           </motion.div>
         </motion.div>
       </section>
 
-      {/* ============================================ */}
-      {/* WARP PORTAL VISUALIZATION */}
-      {/* ============================================ */}
-      <WarpPortal />
-
-      {/* ============================================ */}
-      {/* COMMAND TERMINAL DEMO */}
-      {/* ============================================ */}
-      <section className="relative w-full py-24 md:py-32 px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-4xl font-semibold text-text-primary mb-4">
-            See it in action
-          </h2>
-          <p className="text-lg text-text-secondary">
-            One command. Infinite possibilities.
-          </p>
-        </motion.div>
-        <CommandTerminal />
-      </section>
-
-      {/* Section Divider */}
-      <div className="w-full max-w-4xl mx-auto px-6">
-        <div className="h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
+      {/* Divider */}
+      <div className="w-full max-w-xs md:max-w-4xl mx-auto px-6">
+        <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
       </div>
 
       {/* ============================================ */}
@@ -259,8 +218,8 @@ export default function Home() {
       {/* ============================================ */}
       <HowItWorks />
 
-      {/* Section Divider */}
-      <div className="w-full max-w-4xl mx-auto px-6">
+      {/* Divider */}
+      <div className="w-full max-w-xs md:max-w-4xl mx-auto px-6">
         <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
       </div>
 
@@ -269,8 +228,8 @@ export default function Home() {
       {/* ============================================ */}
       <Philosophy />
 
-      {/* Section Divider */}
-      <div className="w-full max-w-4xl mx-auto px-6">
+      {/* Divider */}
+      <div className="w-full max-w-xs md:max-w-4xl mx-auto px-6">
         <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
       </div>
 
@@ -279,67 +238,52 @@ export default function Home() {
       {/* ============================================ */}
       <WarpsPreview />
 
-      {/* Section Divider */}
-      <div className="w-full max-w-4xl mx-auto px-6">
-        <div className="h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent" />
-      </div>
-
-      {/* ============================================ */}
-      {/* FUTURE VISION SECTION */}
-      {/* ============================================ */}
-      <FutureVision />
-
       {/* ============================================ */}
       {/* FINAL CTA SECTION */}
       {/* ============================================ */}
-      <section className="relative w-full py-40 md:py-56 px-6 overflow-hidden">
-        {/* Dramatic background */}
+      <section className="relative w-full py-24 md:py-40 px-5 md:px-6 overflow-hidden">
+        {/* Background glow */}
         <div className="absolute inset-0 -z-10">
           <motion.div
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            whileInView={{ opacity: 0.6 }}
             viewport={{ once: true }}
-            transition={{ duration: 2 }}
-            className="absolute inset-0"
-            style={{
-              background: `
-                radial-gradient(ellipse 100% 70% at 50% 100%, rgba(0, 102, 255, 0.15) 0%, transparent 50%),
-                radial-gradient(ellipse 80% 50% at 20% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
-                radial-gradient(ellipse 60% 40% at 80% 90%, rgba(6, 182, 212, 0.08) 0%, transparent 50%)
-              `,
-            }}
+            transition={{ duration: 1.5 }}
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] md:w-[800px] h-[300px] md:h-[400px] bg-accent/10 rounded-full blur-[150px] md:blur-[200px]"
           />
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="max-w-4xl mx-auto text-center"
+          transition={{ duration: 0.6 }}
+          className="max-w-3xl mx-auto text-center"
         >
+          {/* Icon */}
           <motion.div
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, type: "spring" }}
-            className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-accent to-cyan-400 shadow-2xl shadow-accent/30 mb-10"
+            transition={{ duration: 0.5, type: "spring" }}
+            className="inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-accent to-cyan-400 shadow-xl shadow-accent/25 mb-6 md:mb-8"
           >
             <svg
-              width="36"
-              height="36"
+              width="24"
+              height="24"
               viewBox="0 0 24 24"
               fill="none"
               stroke="white"
               strokeWidth="2.5"
               strokeLinecap="round"
               strokeLinejoin="round"
+              className="md:w-7 md:h-7"
             >
               <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
             </svg>
           </motion.div>
 
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-text-primary leading-tight mb-8">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-text-primary leading-tight mb-4 md:mb-6">
             Ready to{" "}
             <span className="bg-gradient-to-r from-accent via-cyan-400 to-purple-400 bg-clip-text text-transparent">
               Warp
@@ -347,9 +291,8 @@ export default function Home() {
             ?
           </h2>
 
-          <p className="text-xl md:text-2xl text-text-secondary max-w-2xl mx-auto mb-12 leading-relaxed">
-            Be among the first to experience the future of Mac productivity.
-            Join the waitlist and shape what comes next.
+          <p className="text-base md:text-xl text-text-secondary max-w-lg mx-auto mb-8 md:mb-10 leading-relaxed px-2">
+            Join the waitlist and be among the first to experience the future of Mac productivity.
           </p>
 
           <WaitlistForm />
@@ -358,24 +301,18 @@ export default function Home() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.5 }}
-            className="flex flex-wrap items-center justify-center gap-6 mt-10 text-sm text-text-secondary"
+            transition={{ delay: 0.4 }}
+            className="flex flex-wrap items-center justify-center gap-4 md:gap-6 mt-8 text-xs md:text-sm text-text-secondary"
           >
-            <div className="flex items-center gap-2">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="text-emerald-400">
-                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            <div className="flex items-center gap-1.5">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-emerald-400">
+                <polyline points="20 6 9 17 4 12" />
               </svg>
               <span>Free early access</span>
             </div>
-            <div className="flex items-center gap-2">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="text-emerald-400">
-                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <span>Shape the product</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="text-emerald-400">
-                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            <div className="flex items-center gap-1.5">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-emerald-400">
+                <polyline points="20 6 9 17 4 12" />
               </svg>
               <span>No spam, ever</span>
             </div>
@@ -386,67 +323,41 @@ export default function Home() {
       {/* ============================================ */}
       {/* FOOTER */}
       {/* ============================================ */}
-      <footer className="relative w-full py-16 px-6 border-t border-white/5">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+      <footer className="relative w-full py-8 md:py-12 px-5 md:px-6 border-t border-white/5">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
             {/* Logo */}
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              className="flex items-center gap-3"
-            >
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent to-cyan-400 flex items-center justify-center">
+            <div className="flex items-center gap-2">
+              <div className="w-6 h-6 md:w-7 md:h-7 rounded-lg bg-gradient-to-br from-accent to-cyan-400 flex items-center justify-center">
                 <svg
-                  width="16"
-                  height="16"
+                  width="12"
+                  height="12"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="white"
                   strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+                  className="md:w-[14px] md:h-[14px]"
                 >
                   <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
                 </svg>
               </div>
-              <span className="text-text-primary font-medium text-lg">WarpFlow</span>
-            </motion.div>
+              <span className="text-text-primary font-medium text-sm md:text-base">WarpFlow</span>
+            </div>
 
             {/* Info */}
-            <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-text-secondary">
-              <span className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-                Coming 2026
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-purple-400" />
-                macOS only
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
-                Built in Germany
-              </span>
+            <div className="flex flex-wrap items-center justify-center gap-3 md:gap-5 text-[11px] md:text-sm text-text-secondary">
+              <span>Coming 2026</span>
+              <span className="text-white/20">·</span>
+              <span>macOS only</span>
+              <span className="text-white/20">·</span>
+              <span>Built in Germany</span>
             </div>
 
             {/* Copyright */}
-            <p className="text-xs text-text-secondary/40">
-              &copy; {new Date().getFullYear()} WarpFlow. All rights reserved.
+            <p className="text-[10px] md:text-xs text-text-secondary/40">
+              &copy; {new Date().getFullYear()} WarpFlow
             </p>
           </div>
-
-          {/* Bottom tagline */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="mt-12 pt-8 border-t border-white/5 text-center"
-          >
-            <p className="text-sm text-text-secondary/60 font-light tracking-wide">
-              The future of computing is{" "}
-              <span className="bg-gradient-to-r from-accent to-cyan-400 bg-clip-text text-transparent font-medium">
-                one command away
-              </span>
-            </p>
-          </motion.div>
         </div>
       </footer>
     </main>
