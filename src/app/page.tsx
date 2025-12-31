@@ -36,7 +36,7 @@ export default function Home() {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="flex items-center justify-center gap-2 md:gap-2.5"
+          className="flex items-center justify-center gap-2 md:gap-2.5 mb-6 md:mb-0"
         >
           <motion.div
             className="w-8 h-8 md:w-9 md:h-9 rounded-xl bg-gradient-to-br from-accent to-cyan-400 flex items-center justify-center shadow-lg shadow-accent/25"
