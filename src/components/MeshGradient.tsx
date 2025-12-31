@@ -8,8 +8,31 @@ export function MeshGradient() {
       {/* Base dark gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#030303] via-[#050510] to-[#030303]" />
 
-      {/* Animated mesh blobs */}
-      <div className="absolute inset-0">
+      {/* Static mobile fallback - simpler gradients without animation */}
+      <div className="md:hidden absolute inset-0">
+        <div
+          className="absolute w-[400px] h-[300px] rounded-full opacity-25"
+          style={{
+            background: "radial-gradient(ellipse at center, #0066ff 0%, transparent 70%)",
+            filter: "blur(60px)",
+            top: "-10%",
+            left: "50%",
+            transform: "translateX(-50%)",
+          }}
+        />
+        <div
+          className="absolute w-[300px] h-[300px] rounded-full opacity-15"
+          style={{
+            background: "radial-gradient(ellipse at center, #8b5cf6 0%, transparent 70%)",
+            filter: "blur(50px)",
+            top: "40%",
+            left: "-10%",
+          }}
+        />
+      </div>
+
+      {/* Animated mesh blobs - desktop only */}
+      <div className="hidden md:block absolute inset-0">
         {/* Primary accent blob - top center */}
         <motion.div
           className="absolute w-[800px] h-[600px] rounded-full opacity-30"

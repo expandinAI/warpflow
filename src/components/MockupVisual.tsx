@@ -110,7 +110,7 @@ export function MockupVisual() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.3 }}
+        transition={{ duration: 0.4, delay: 0.15 }}
         className="relative rounded-2xl md:rounded-2xl bg-[#0a0a0a] border border-white/10 overflow-hidden shadow-2xl"
       >
         {/* Window Title Bar */}
@@ -181,7 +181,7 @@ export function MockupVisual() {
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.35, delay: 0.25, ease: "easeOut" }}
           className="absolute bottom-3 md:bottom-5 left-3 right-3 md:left-5 md:right-5"
         >
           <div className="relative rounded-xl md:rounded-2xl border border-accent/40 bg-[#0a0a0a]/95 backdrop-blur-xl overflow-hidden shadow-lg shadow-accent/10">
@@ -387,7 +387,7 @@ export function MockupVisual() {
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 1 }}
+        transition={{ duration: 0.4, delay: 0.4 }}
         className="flex flex-wrap justify-center gap-4 md:gap-6 mt-6 md:mt-8 text-[10px] md:text-xs text-text-secondary"
       >
         <div className="flex items-center gap-1.5 md:gap-2">

@@ -56,13 +56,13 @@ export function Philosophy() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 0.5 } : {}}
-          transition={{ duration: 1.5 }}
+          transition={{ duration: 0.8 }}
           className="absolute top-0 right-0 w-[600px] h-[600px] bg-purple-500/5 rounded-full blur-[200px]"
         />
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 0.5 } : {}}
-          transition={{ duration: 1.5, delay: 0.3 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
           className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[150px]"
         />
       </div>
@@ -104,7 +104,7 @@ export function Philosophy() {
             <motion.div
               initial={{ opacity: 0, scale: 0 }}
               animate={isInView ? { opacity: 0.1, scale: 1 } : {}}
-              transition={{ duration: 0.5, delay: 0.4 }}
+              transition={{ duration: 0.3, delay: 0.1 }}
               className="absolute -top-4 -left-2 text-8xl text-accent font-serif"
             >
               &ldquo;
@@ -114,7 +114,7 @@ export function Philosophy() {
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : {}}
-                transition={{ duration: 0.6, delay: 0.3 }}
+                transition={{ duration: 0.4, delay: 0.1 }}
               >
                 You know the feeling: A simple task – reply to an email, reschedule a meeting,
                 find a file. But the path to get there?{" "}
@@ -126,7 +126,7 @@ export function Philosophy() {
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : {}}
-                transition={{ duration: 0.6, delay: 0.5 }}
+                transition={{ duration: 0.4, delay: 0.2 }}
                 className="text-2xl md:text-3xl text-text-primary font-medium"
               >
                 Warp Flow eliminates the path.
@@ -135,7 +135,7 @@ export function Philosophy() {
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : {}}
-                transition={{ duration: 0.6, delay: 0.7 }}
+                transition={{ duration: 0.4, delay: 0.3 }}
               >
                 You say what you want. Warp Flow takes you there. You stay in{" "}
                 <span className="bg-gradient-to-r from-accent to-blue-400 bg-clip-text text-transparent font-semibold">
@@ -165,7 +165,7 @@ export function Philosophy() {
               key={principle.title}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.5 + index * 0.15 }}
+              transition={{ duration: 0.4, delay: 0.15 + index * 0.08 }}
               className="group"
             >
               <div className="relative h-full p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-accent/20 transition-all duration-500">
@@ -180,7 +180,7 @@ export function Philosophy() {
                     transition={{
                       type: "spring",
                       stiffness: 300,
-                      delay: 0.6 + index * 0.15
+                      delay: 0.2 + index * 0.08
                     }}
                     className="w-14 h-14 rounded-xl bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 flex items-center justify-center mb-6 text-accent group-hover:border-accent/30 transition-colors duration-500"
                   >
@@ -206,7 +206,7 @@ export function Philosophy() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 1 }}
+          transition={{ duration: 0.4, delay: 0.4 }}
           className="mt-20 text-center"
         >
           <p className="text-2xl md:text-3xl text-text-secondary font-light tracking-wide">
