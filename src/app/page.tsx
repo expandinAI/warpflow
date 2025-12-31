@@ -35,8 +35,8 @@ export default function Home() {
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="flex items-center justify-center gap-2 md:gap-2.5 mb-6 md:mb-0"
+          transition={{ duration: 0.4 }}
+          className="flex items-center justify-center gap-2 md:gap-2.5 mb-6 md:mb-12"
         >
           <motion.div
             className="w-8 h-8 md:w-9 md:h-9 rounded-xl bg-gradient-to-br from-accent to-cyan-400 flex items-center justify-center shadow-lg shadow-accent/25"
@@ -65,10 +65,10 @@ export default function Home() {
         <div className="flex-1 flex flex-col items-center justify-center max-w-4xl mx-auto text-center mt-8 md:mt-0">
           {/* Badge */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="inline-flex items-center gap-2 px-3 md:px-4 py-1.5 md:py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm mb-6 md:mb-8"
+            transition={{ duration: 0.3, delay: 0.05 }}
+            className="inline-flex items-center gap-2 px-3 md:px-4 py-1.5 md:py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm mb-6 md:mb-10"
           >
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -79,9 +79,9 @@ export default function Home() {
 
           {/* Headline */}
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
             className="text-[2.75rem] leading-[1.1] md:text-6xl lg:text-7xl font-bold tracking-tight text-text-primary"
           >
             Warp into{" "}
@@ -99,9 +99,9 @@ export default function Home() {
 
           {/* Subline */}
           <motion.p
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.25 }}
+            transition={{ duration: 0.4, delay: 0.15 }}
             className="mt-4 md:mt-6 text-base md:text-xl text-text-secondary max-w-lg md:max-w-2xl mx-auto leading-relaxed px-2"
           >
             <span className="text-text-primary font-medium">The AI Copilot for your Mac.</span>
@@ -111,9 +111,9 @@ export default function Home() {
 
           {/* Waitlist Form */}
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.35 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
             className="mt-8 md:mt-10 w-full max-w-md"
           >
             <WaitlistForm />
@@ -123,7 +123,7 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.45 }}
+            transition={{ duration: 0.3, delay: 0.25 }}
             className="flex items-center justify-center gap-2 mt-4 md:mt-6 text-xs md:text-sm text-text-secondary"
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" className="opacity-50">
@@ -140,7 +140,7 @@ export default function Home() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 2.5, duration: 1 }}
+          transition={{ delay: 1, duration: 0.5 }}
           className="hidden md:flex justify-center mt-8"
         >
           <motion.div

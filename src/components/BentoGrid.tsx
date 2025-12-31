@@ -10,9 +10,9 @@ function EmailLines({ className }: { className?: string }) {
       {[100, 85, 92, 78, 65].map((width, i) => (
         <motion.div
           key={i}
-          initial={{ opacity: 0, x: -10 }}
+          initial={{ opacity: 0, x: -5 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.5 + i * 0.1 }}
+          transition={{ delay: 0.1 + i * 0.03 }}
           className="h-2 rounded-full bg-white/10"
           style={{ width: `${width}%` }}
         />
@@ -36,7 +36,7 @@ function SummaryOutput() {
           key={i}
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 1 + i * 0.15 }}
+          transition={{ delay: 0.3 + i * 0.08 }}
           className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10"
         >
           <span className="text-sm">{item.icon}</span>
@@ -55,26 +55,26 @@ function TypingDraft() {
         <motion.div
           initial={{ width: 0 }}
           animate={{ width: "100%" }}
-          transition={{ duration: 1.5, delay: 0.5 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
           className="h-2 rounded-full bg-gradient-to-r from-purple-400/40 to-transparent overflow-hidden"
         />
         <motion.div
           initial={{ width: 0 }}
           animate={{ width: "85%" }}
-          transition={{ duration: 1.2, delay: 0.8 }}
+          transition={{ duration: 0.5, delay: 0.25 }}
           className="h-2 rounded-full bg-gradient-to-r from-purple-400/30 to-transparent overflow-hidden"
         />
         <motion.div
           initial={{ width: 0 }}
           animate={{ width: "70%" }}
-          transition={{ duration: 1, delay: 1.1 }}
+          transition={{ duration: 0.4, delay: 0.35 }}
           className="h-2 rounded-full bg-gradient-to-r from-purple-400/20 to-transparent overflow-hidden"
         />
       </div>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: [0, 1, 0] }}
-        transition={{ duration: 0.8, repeat: Infinity, delay: 1.5 }}
+        transition={{ duration: 0.8, repeat: Infinity, delay: 0.5 }}
         className="absolute bottom-0 right-0 w-0.5 h-4 bg-purple-400"
       />
     </div>
@@ -90,9 +90,9 @@ export function BentoGrid() {
       <div className="max-w-6xl mx-auto px-5 md:px-6">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.4 }}
           className="text-center mb-10 md:mb-14"
         >
           <h2 className="text-3xl md:text-5xl font-semibold tracking-tight text-text-primary">
@@ -108,9 +108,9 @@ export function BentoGrid() {
 
           {/* ===== SUMMARIZE - Large Feature Card ===== */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            transition={{ duration: 0.4, delay: 0.05 }}
             className="col-span-4 md:col-span-4 row-span-1 md:row-span-1 relative group"
           >
             <div className="relative h-full min-h-[280px] md:min-h-[320px] p-6 md:p-8 rounded-3xl bg-gradient-to-br from-blue-600/20 via-blue-500/10 to-transparent border border-white/10 overflow-hidden">
@@ -151,9 +151,9 @@ export function BentoGrid() {
                     </div>
                     {/* Summary card */}
                     <motion.div
-                      initial={{ opacity: 0, y: 20, rotate: 0 }}
+                      initial={{ opacity: 0, y: 15, rotate: 0 }}
                       animate={isInView ? { opacity: 1, y: 0, rotate: 3 } : {}}
-                      transition={{ delay: 0.6, duration: 0.5 }}
+                      transition={{ delay: 0.2, duration: 0.4 }}
                       className="relative rounded-xl bg-[#0a0a0a] border border-blue-500/30 p-4 shadow-xl shadow-blue-500/10"
                     >
                       <div className="flex items-center gap-2 mb-3">
@@ -170,9 +170,9 @@ export function BentoGrid() {
 
           {/* ===== DRAFT REPLY - Tall Card ===== */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
             className="col-span-2 row-span-1 relative group"
           >
             <div className="relative h-full min-h-[280px] md:min-h-[320px] p-5 md:p-6 rounded-3xl bg-gradient-to-br from-purple-600/20 via-purple-500/10 to-transparent border border-white/10 overflow-hidden">
@@ -206,9 +206,9 @@ export function BentoGrid() {
 
           {/* Triage */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            transition={{ duration: 0.4, delay: 0.15 }}
             className="col-span-2 relative group"
           >
             <div className="relative h-full min-h-[160px] md:min-h-[180px] p-5 md:p-6 rounded-3xl bg-gradient-to-br from-amber-600/15 via-amber-500/5 to-transparent border border-white/10 overflow-hidden">
@@ -234,9 +234,9 @@ export function BentoGrid() {
 
           {/* Voice */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
             className="col-span-2 relative group"
           >
             <div className="relative h-full min-h-[160px] md:min-h-[180px] p-5 md:p-6 rounded-3xl bg-gradient-to-br from-emerald-600/15 via-emerald-500/5 to-transparent border border-white/10 overflow-hidden">
@@ -264,9 +264,9 @@ export function BentoGrid() {
 
           {/* More Apps */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.5 }}
+            transition={{ duration: 0.4, delay: 0.25 }}
             className="col-span-2 relative group"
           >
             <div className="relative h-full min-h-[160px] md:min-h-[180px] p-5 md:p-6 rounded-3xl bg-white/[0.02] border border-white/10 overflow-hidden flex flex-col justify-between">
@@ -284,9 +284,9 @@ export function BentoGrid() {
                 {["📅", "📝", "🌐", "💬"].map((emoji, i) => (
                   <motion.div
                     key={i}
-                    initial={{ opacity: 0, scale: 0 }}
+                    initial={{ opacity: 0, scale: 0.8 }}
                     animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                    transition={{ delay: 0.8 + i * 0.1, type: "spring" }}
+                    transition={{ delay: 0.3 + i * 0.05, type: "spring", duration: 0.3 }}
                     className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-sm md:text-base"
                   >
                     {emoji}

@@ -99,7 +99,7 @@ export function HowItWorks() {
             <motion.div
               initial={{ scaleX: 0 }}
               animate={isInView ? { scaleX: 1 } : {}}
-              transition={{ duration: 1, delay: 0.5, ease: "easeInOut" }}
+              transition={{ duration: 0.6, delay: 0.2, ease: "easeInOut" }}
               className="h-full bg-gradient-to-r from-transparent via-accent/50 to-transparent origin-left"
             />
           </div>
@@ -167,7 +167,7 @@ export function HowItWorks() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.6 }}
+          transition={{ duration: 0.4, delay: 0.3 }}
           className="hidden md:flex mt-12 justify-center"
         >
           <div className="inline-flex items-center gap-3 px-5 py-3 rounded-full bg-white/[0.02] border border-white/10">
