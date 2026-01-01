@@ -294,7 +294,7 @@ export function MockupVisual() {
                           <motion.div
                             animate={{ rotate: 360 }}
                             transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                            className="w-5 h-5 border-2 border-white/20 border-t-white/60 rounded-full"
+                            className="w-5 h-5 border-2 border-accent/20 border-t-accent rounded-full"
                           />
                           <span className="text-xs md:text-sm text-text-secondary">Processing...</span>
                         </div>

@@ -92,14 +92,17 @@ export default function Home() {
             transition={{ duration: 0.4, delay: 0.1 }}
             className="text-[2.75rem] leading-[1.1] md:text-6xl lg:text-7xl font-bold tracking-tight text-text-primary"
           >
-            Warp into{" "}
+            <span className="relative inline-block">
+              <span className="text-accent">Warp</span>
+            </span>{" "}
+            into{" "}
             <span className="relative inline-block">
               <span className="text-accent">
                 Flow
               </span>
               {/* Subtle glow behind text - only on desktop */}
               <span
-                className="absolute -inset-2 bg-white/10 blur-2xl -z-10 rounded-full hidden md:block"
+                className="absolute -inset-2 bg-accent/20 blur-2xl -z-10 rounded-full hidden md:block"
               />
             </span>
           </motion.h1>
@@ -224,7 +227,7 @@ export default function Home() {
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, type: "spring" }}
-            className="inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-white/10 border border-white/10 mb-6 md:mb-8"
+            className="inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-accent/10 border border-accent/20 mb-6 md:mb-8"
           >
             <svg
               width="24"
@@ -243,7 +246,7 @@ export default function Home() {
 
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-text-primary leading-tight mb-4 md:mb-6">
             Ready to{" "}
-            <span className="text-white">
+            <span className="text-accent">
               Warp
             </span>
             ?

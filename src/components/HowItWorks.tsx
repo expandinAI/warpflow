@@ -76,9 +76,10 @@ export function HowItWorks() {
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-text-primary leading-tight px-2">
             You choose the destination.
             <br />
-            <span className="text-white">
-              Warp Flow knows the way.
-            </span>
+            <span className="text-accent">
+              Warp Flow
+            </span>{" "}
+            <span className="text-white">knows the way.</span>
           </h2>
 
           <motion.p
@@ -100,7 +101,7 @@ export function HowItWorks() {
               initial={{ scaleX: 0 }}
               animate={isInView ? { scaleX: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.2, ease: "easeInOut" }}
-              className="h-full bg-gradient-to-r from-transparent via-white/20 to-transparent origin-left"
+              className="h-full bg-gradient-to-r from-transparent via-accent/30 to-transparent origin-left"
             />
           </div>
 

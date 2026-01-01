@@ -86,7 +86,7 @@ export function Philosophy() {
 
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-text-primary leading-tight mb-8">
             Why we&apos;re building{" "}
-            <span className="text-white">
+            <span className="text-accent">
               Warp Flow
             </span>
           </h2>
@@ -105,7 +105,7 @@ export function Philosophy() {
               initial={{ opacity: 0, scale: 0 }}
               animate={isInView ? { opacity: 0.1, scale: 1 } : {}}
               transition={{ duration: 0.3, delay: 0.1 }}
-              className="absolute -top-4 -left-2 text-8xl text-white/20 font-serif"
+              className="absolute -top-4 -left-2 text-8xl text-accent/30 font-serif"
             >
               &ldquo;
             </motion.div>
@@ -138,7 +138,7 @@ export function Philosophy() {
                 transition={{ duration: 0.4, delay: 0.3 }}
               >
                 You say what you want. Warp Flow takes you there. You stay in{" "}
-                <span className="text-white font-semibold">
+                <span className="text-accent font-semibold">
                   flow
                 </span>
                 {" "}– the state where work becomes effortless.
@@ -211,7 +211,7 @@ export function Philosophy() {
         >
           <p className="text-2xl md:text-3xl text-text-secondary font-light tracking-wide">
             No menus. No mouse.{" "}
-            <span className="text-white font-semibold">
+            <span className="text-accent font-semibold">
               Just flow.
             </span>
           </p>
