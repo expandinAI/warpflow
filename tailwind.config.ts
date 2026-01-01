@@ -15,19 +15,19 @@ const config: Config = {
         },
         text: {
           primary: "#fafafa",
-          secondary: "#737373",
+          secondary: "#666666",
         },
         accent: {
-          DEFAULT: "#f59e0b",
-          glow: "rgba(245,158,11,0.4)",
+          DEFAULT: "#3b82f6",
+          glow: "rgba(59,130,246,0.3)",
         },
       },
       fontFamily: {
         sans: ["var(--font-geist-sans)", "Inter", "system-ui", "sans-serif"],
       },
       boxShadow: {
-        glow: "0 0 20px rgba(245,158,11,0.3)",
-        "glow-lg": "0 0 40px rgba(245,158,11,0.2)",
+        glow: "0 0 20px rgba(59,130,246,0.2)",
+        "glow-lg": "0 0 40px rgba(59,130,246,0.15)",
       },
       animation: {
         "fade-in": "fadeIn 0.5s ease-out forwards",

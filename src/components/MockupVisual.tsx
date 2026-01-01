@@ -391,7 +391,7 @@ export function MockupVisual() {
         className="flex flex-wrap justify-center gap-4 md:gap-6 mt-6 md:mt-8 text-[10px] md:text-xs text-text-secondary"
       >
         <div className="flex items-center gap-1.5 md:gap-2">
-          <div className="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-accent" />
+          <div className="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-white/40" />
           <span>Warps for actions</span>
         </div>
         <div className="flex items-center gap-1.5 md:gap-2">

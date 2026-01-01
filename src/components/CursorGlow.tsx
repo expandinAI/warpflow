@@ -46,7 +46,7 @@ export function CursorGlow() {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
     >
-      {/* Main glow - subtle white/amber */}
+      {/* Main glow - subtle white only */}
       <motion.div
         className="absolute w-[500px] h-[500px] rounded-full"
         style={{
@@ -54,7 +54,7 @@ export function CursorGlow() {
           y: smoothY,
           translateX: "-50%",
           translateY: "-50%",
-          background: "radial-gradient(circle, rgba(255,255,255,0.04) 0%, rgba(245,158,11,0.02) 40%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%)",
         }}
       />
 

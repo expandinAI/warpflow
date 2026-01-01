@@ -63,24 +63,6 @@ export function MeshGradient() {
           }}
         />
 
-        {/* Subtle amber accent glow - very faint */}
-        <motion.div
-          className="absolute w-[400px] h-[400px] rounded-full opacity-[0.015]"
-          style={{
-            background: "radial-gradient(ellipse at center, #f59e0b 0%, transparent 70%)",
-            filter: "blur(100px)",
-            top: "30%",
-            left: "20%",
-          }}
-          animate={{
-            opacity: [0.015, 0.025, 0.015],
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
       </div>
 
       {/* Enhanced noise texture overlay */}

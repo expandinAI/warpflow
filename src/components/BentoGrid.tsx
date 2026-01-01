@@ -75,7 +75,7 @@ function TypingDraft() {
         initial={{ opacity: 0 }}
         animate={{ opacity: [0, 1, 0] }}
         transition={{ duration: 0.8, repeat: Infinity, delay: 0.5 }}
-        className="absolute bottom-0 right-0 w-0.5 h-4 bg-accent"
+        className="absolute bottom-0 right-0 w-0.5 h-4 bg-white/50"
       />
     </div>
   );
@@ -135,8 +135,8 @@ export function BentoGrid() {
                   </p>
 
                   <div className="mt-auto">
-                    <span className="inline-flex items-center gap-1.5 text-xs text-accent">
-                      <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+                    <span className="inline-flex items-center gap-1.5 text-xs text-text-secondary">
+                      <span className="w-1.5 h-1.5 rounded-full bg-white/30" />
                       Instant extraction
                     </span>
                   </div>
@@ -157,8 +157,8 @@ export function BentoGrid() {
                       className="relative rounded-xl bg-[#0a0a0a] border border-white/20 p-4 shadow-xl"
                     >
                       <div className="flex items-center gap-2 mb-3">
-                        <div className="w-1.5 h-1.5 rounded-full bg-accent" />
-                        <span className="text-[10px] text-accent font-medium">Summary</span>
+                        <div className="w-1.5 h-1.5 rounded-full bg-white/40" />
+                        <span className="text-[10px] text-text-secondary font-medium">Summary</span>
                       </div>
                       <SummaryOutput />
                     </motion.div>
@@ -204,17 +204,17 @@ export function BentoGrid() {
 
           {/* ===== ROW 2: Three smaller cards ===== */}
 
-          {/* Triage - This one keeps amber as the main accent */}
+          {/* Triage */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.4, delay: 0.15 }}
             className="col-span-2 relative group"
           >
-            <div className="relative h-full min-h-[160px] md:min-h-[180px] p-5 md:p-6 rounded-3xl bg-accent/5 border border-accent/20 overflow-hidden hover:border-accent/30 transition-colors">
+            <div className="relative h-full min-h-[160px] md:min-h-[180px] p-5 md:p-6 rounded-3xl bg-white/[0.02] border border-white/10 overflow-hidden hover:border-white/20 transition-colors">
               <div className="flex items-start justify-between mb-3">
-                <div className="w-9 h-9 rounded-xl bg-accent flex items-center justify-center shadow-lg shadow-accent/20">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5">
+                <div className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center border border-white/10">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-text-primary">
                     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
                   </svg>
                 </div>
