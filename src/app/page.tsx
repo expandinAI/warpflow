@@ -46,7 +46,7 @@ export default function Home() {
           <div className="relative">
             <WarpRing />
             <motion.div
-              className="relative w-8 h-8 md:w-9 md:h-9 rounded-xl bg-accent flex items-center justify-center shadow-lg shadow-accent/20"
+              className="relative w-8 h-8 md:w-9 md:h-9 rounded-xl bg-accent flex items-center justify-center shadow-lg shadow-black/30"
               whileHover={{ scale: 1.05 }}
             >
             <svg
@@ -99,7 +99,7 @@ export default function Home() {
               </span>
               {/* Subtle glow behind text - only on desktop */}
               <span
-                className="absolute -inset-2 bg-accent/15 blur-2xl -z-10 rounded-full hidden md:block"
+                className="absolute -inset-2 bg-white/10 blur-2xl -z-10 rounded-full hidden md:block"
               />
             </span>
           </motion.h1>
@@ -159,7 +159,7 @@ export default function Home() {
               <motion.div
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
-                className="w-1 h-1.5 rounded-full bg-accent/60"
+                className="w-1 h-1.5 rounded-full bg-white/40"
               />
             </div>
           </motion.div>
@@ -207,7 +207,7 @@ export default function Home() {
             whileInView={{ opacity: 0.6 }}
             viewport={{ once: true }}
             transition={{ duration: 1.5 }}
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] md:w-[800px] h-[300px] md:h-[400px] bg-accent/10 rounded-full blur-[150px] md:blur-[200px]"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] md:w-[800px] h-[300px] md:h-[400px] bg-white/[0.03] rounded-full blur-[150px] md:blur-[200px]"
           />
         </div>
 
@@ -224,7 +224,7 @@ export default function Home() {
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, type: "spring" }}
-            className="inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-accent shadow-xl shadow-accent/20 mb-6 md:mb-8"
+            className="inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-white/10 border border-white/10 mb-6 md:mb-8"
           >
             <svg
               width="24"
@@ -243,7 +243,7 @@ export default function Home() {
 
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-text-primary leading-tight mb-4 md:mb-6">
             Ready to{" "}
-            <span className="text-accent">
+            <span className="text-white">
               Warp
             </span>
             ?
@@ -263,13 +263,13 @@ export default function Home() {
             className="flex flex-wrap items-center justify-center gap-4 md:gap-6 mt-8 text-xs md:text-sm text-text-secondary"
           >
             <div className="flex items-center gap-1.5">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-emerald-400">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-white/50">
                 <polyline points="20 6 9 17 4 12" />
               </svg>
               <span>Free early access</span>
             </div>
             <div className="flex items-center gap-1.5">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-emerald-400">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-white/50">
                 <polyline points="20 6 9 17 4 12" />
               </svg>
               <span>No spam, ever</span>
@@ -286,7 +286,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
             {/* Logo */}
             <div className="flex items-center gap-2">
-              <div className="w-6 h-6 md:w-7 md:h-7 rounded-lg bg-accent flex items-center justify-center">
+              <div className="w-6 h-6 md:w-7 md:h-7 rounded-lg bg-white/10 border border-white/10 flex items-center justify-center">
                 <svg
                   width="12"
                   height="12"

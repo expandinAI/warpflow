@@ -52,7 +52,7 @@ export function HowItWorks() {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 1 }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] md:w-[800px] h-[400px] md:h-[600px] bg-accent/5 rounded-full blur-[100px] md:blur-[150px]"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] md:w-[800px] h-[400px] md:h-[600px] bg-white/[0.02] rounded-full blur-[100px] md:blur-[150px]"
         />
       </div>
 
@@ -76,7 +76,7 @@ export function HowItWorks() {
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-text-primary leading-tight px-2">
             You choose the destination.
             <br />
-            <span className="text-accent">
+            <span className="text-white">
               Warp Flow knows the way.
             </span>
           </h2>
@@ -100,7 +100,7 @@ export function HowItWorks() {
               initial={{ scaleX: 0 }}
               animate={isInView ? { scaleX: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.2, ease: "easeInOut" }}
-              className="h-full bg-gradient-to-r from-transparent via-accent/50 to-transparent origin-left"
+              className="h-full bg-gradient-to-r from-transparent via-white/20 to-transparent origin-left"
             />
           </div>
 
@@ -115,7 +115,7 @@ export function HowItWorks() {
                 className="relative group"
               >
                 {/* Step Card */}
-                <div className="relative p-5 md:p-6 rounded-xl md:rounded-2xl bg-white/[0.02] border border-white/5 backdrop-blur-sm hover:border-accent/30 transition-all duration-300">
+                <div className="relative p-5 md:p-6 rounded-xl md:rounded-2xl bg-white/[0.02] border border-white/5 backdrop-blur-sm hover:border-white/20 transition-all duration-300">
                   {/* Content */}
                   <div className="relative flex md:flex-col items-start gap-4 md:gap-0">
                     {/* Number badge */}
@@ -127,9 +127,9 @@ export function HowItWorks() {
                         stiffness: 300,
                         delay: 0.3 + index * 0.1
                       }}
-                      className="w-11 h-11 md:w-12 md:h-12 rounded-xl bg-accent flex items-center justify-center md:mb-4 shadow-md shadow-accent/20 shrink-0"
+                      className="w-11 h-11 md:w-12 md:h-12 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center md:mb-4 shrink-0"
                     >
-                      <span className="text-white [&>svg]:w-5 [&>svg]:h-5 md:[&>svg]:w-6 md:[&>svg]:h-6">{step.icon}</span>
+                      <span className="text-text-primary [&>svg]:w-5 [&>svg]:h-5 md:[&>svg]:w-6 md:[&>svg]:h-6">{step.icon}</span>
                     </motion.div>
 
                     <div className="flex-1">
@@ -171,7 +171,7 @@ export function HowItWorks() {
           className="hidden md:flex mt-12 justify-center"
         >
           <div className="inline-flex items-center gap-3 px-5 py-3 rounded-full bg-white/[0.02] border border-white/10">
-            <kbd className="px-2.5 py-1 rounded-md bg-accent/20 border border-accent/30 text-accent text-xs font-medium">
+            <kbd className="px-2.5 py-1 rounded-md bg-white/10 border border-white/20 text-text-primary text-xs font-medium">
               ⌘J
             </kbd>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-text-secondary/40">
