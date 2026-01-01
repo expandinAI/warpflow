@@ -10,6 +10,11 @@ import { BentoGrid } from "@/components/BentoGrid";
 import { MockupVisual } from "@/components/MockupVisual";
 import { CursorGlow } from "@/components/CursorGlow";
 import { MeshGradient } from "@/components/MeshGradient";
+import { FlowLines } from "@/components/FlowLines";
+import { WarpText } from "@/components/WarpText";
+import { WarpLogo } from "@/components/WarpLogo";
+import { Parallax } from "@/components/Parallax";
+import { AnimatedDivider } from "@/components/AnimatedDivider";
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -31,31 +36,17 @@ export default function Home() {
       {/* HERO SECTION */}
       {/* ============================================ */}
       <section className="relative w-full min-h-screen flex flex-col px-5 md:px-6 pt-6 md:pt-8 pb-8">
-        {/* Logo / Brand */}
+        {/* Flow Lines - visual personality */}
+        <FlowLines />
+
+        {/* Logo / Brand with Warp Ring */}
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
           className="flex items-center justify-center gap-2 md:gap-2.5 mb-6 md:mb-12"
         >
-          <motion.div
-            className="w-8 h-8 md:w-9 md:h-9 rounded-xl bg-gradient-to-br from-accent to-cyan-400 flex items-center justify-center shadow-lg shadow-accent/25"
-            whileHover={{ scale: 1.05 }}
-          >
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="white"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="md:w-[18px] md:h-[18px]"
-            >
-              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-            </svg>
-          </motion.div>
+          <WarpLogo />
           <span className="text-text-primary font-semibold text-lg md:text-xl tracking-tight">
             Warp Flow
           </span>
@@ -84,15 +75,15 @@ export default function Home() {
             transition={{ duration: 0.4, delay: 0.1 }}
             className="text-[2.75rem] leading-[1.1] md:text-6xl lg:text-7xl font-bold tracking-tight text-text-primary"
           >
-            Warp into{" "}
             <span className="relative inline-block">
-              {/* Gradient text with smooth color shift */}
-              <span className="bg-gradient-to-r from-accent via-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                Flow
-              </span>
+              <WarpText className="text-accent">Warp</WarpText>
+            </span>{" "}
+            into{" "}
+            <span className="relative inline-block">
+              <WarpText className="text-accent">Flow</WarpText>
               {/* Subtle glow behind text - only on desktop */}
               <span
-                className="absolute -inset-1 md:-inset-2 bg-gradient-to-r from-accent/20 via-cyan-400/15 to-purple-400/20 blur-xl md:blur-2xl -z-10 rounded-full hidden md:block"
+                className="absolute -inset-2 bg-accent/20 blur-2xl -z-10 rounded-full hidden md:block"
               />
             </span>
           </motion.h1>
@@ -104,9 +95,9 @@ export default function Home() {
             transition={{ duration: 0.4, delay: 0.15 }}
             className="mt-4 md:mt-6 text-base md:text-xl text-text-secondary max-w-lg md:max-w-2xl mx-auto leading-relaxed px-2"
           >
-            <span className="text-text-primary font-medium">The AI Copilot for your Mac.</span>
+            <span className="text-text-primary font-medium">Your Mac, supercharged with AI.</span>
             <br className="hidden md:block" />{" "}
-            <span className="text-text-secondary">Context-aware. Voice-first. Zero switching.</span>
+            <span className="text-text-secondary">It sees your context. You stay in flow.</span>
           </motion.p>
 
           {/* Waitlist Form */}
@@ -129,12 +120,17 @@ export default function Home() {
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" className="opacity-50">
               <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" />
             </svg>
-            <span>macOS only</span>
+            <span>Designed for Mac</span>
           </motion.div>
         </div>
 
-        {/* Mockup Visual */}
-        <MockupVisual />
+        {/* Mockup Visual with subtle parallax */}
+        <Parallax speed={0.15} className="hidden md:block">
+          <MockupVisual />
+        </Parallax>
+        <div className="md:hidden">
+          <MockupVisual />
+        </div>
 
         {/* Scroll hint - only on desktop */}
         <motion.div
@@ -152,37 +148,31 @@ export default function Home() {
               <motion.div
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
-                className="w-1 h-1.5 rounded-full bg-accent/60"
+                className="w-1 h-1.5 rounded-full bg-white/40"
               />
             </div>
           </motion.div>
         </motion.div>
       </section>
 
-      {/* Divider */}
-      <div className="w-full max-w-xs md:max-w-4xl mx-auto px-6">
-        <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-      </div>
+      {/* Animated Divider */}
+      <AnimatedDivider />
 
       {/* ============================================ */}
       {/* HOW IT WORKS SECTION */}
       {/* ============================================ */}
       <HowItWorks />
 
-      {/* Divider */}
-      <div className="w-full max-w-xs md:max-w-4xl mx-auto px-6">
-        <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-      </div>
+      {/* Animated Divider */}
+      <AnimatedDivider />
 
       {/* ============================================ */}
       {/* PHILOSOPHY SECTION */}
       {/* ============================================ */}
       <Philosophy />
 
-      {/* Divider */}
-      <div className="w-full max-w-xs md:max-w-4xl mx-auto px-6">
-        <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-      </div>
+      {/* Animated Divider */}
+      <AnimatedDivider />
 
       {/* ============================================ */}
       {/* BENTO GRID - WARPS PREVIEW */}
@@ -200,7 +190,7 @@ export default function Home() {
             whileInView={{ opacity: 0.6 }}
             viewport={{ once: true }}
             transition={{ duration: 1.5 }}
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] md:w-[800px] h-[300px] md:h-[400px] bg-accent/10 rounded-full blur-[150px] md:blur-[200px]"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] md:w-[800px] h-[300px] md:h-[400px] bg-white/[0.03] rounded-full blur-[150px] md:blur-[200px]"
           />
         </div>
 
@@ -217,7 +207,7 @@ export default function Home() {
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, type: "spring" }}
-            className="inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-accent to-cyan-400 shadow-xl shadow-accent/25 mb-6 md:mb-8"
+            className="inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-accent/10 border border-accent/20 mb-6 md:mb-8"
           >
             <svg
               width="24"
@@ -236,14 +226,14 @@ export default function Home() {
 
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-text-primary leading-tight mb-4 md:mb-6">
             Ready to{" "}
-            <span className="bg-gradient-to-r from-accent via-cyan-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="text-accent">
               Warp
             </span>
             ?
           </h2>
 
           <p className="text-base md:text-xl text-text-secondary max-w-lg mx-auto mb-8 md:mb-10 leading-relaxed px-2">
-            Join the waitlist and be among the first to experience the future of Mac productivity.
+            Be the first to experience a new way to work on your Mac.
           </p>
 
           <WaitlistForm />
@@ -256,16 +246,16 @@ export default function Home() {
             className="flex flex-wrap items-center justify-center gap-4 md:gap-6 mt-8 text-xs md:text-sm text-text-secondary"
           >
             <div className="flex items-center gap-1.5">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-emerald-400">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-white/50">
                 <polyline points="20 6 9 17 4 12" />
               </svg>
-              <span>Free early access</span>
+              <span>Early access</span>
             </div>
             <div className="flex items-center gap-1.5">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-emerald-400">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-white/50">
                 <polyline points="20 6 9 17 4 12" />
               </svg>
-              <span>No spam, ever</span>
+              <span>Privacy first</span>
             </div>
           </motion.div>
         </motion.div>
@@ -279,7 +269,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
             {/* Logo */}
             <div className="flex items-center gap-2">
-              <div className="w-6 h-6 md:w-7 md:h-7 rounded-lg bg-gradient-to-br from-accent to-cyan-400 flex items-center justify-center">
+              <div className="w-6 h-6 md:w-7 md:h-7 rounded-lg bg-white/10 border border-white/10 flex items-center justify-center">
                 <svg
                   width="12"
                   height="12"
@@ -299,9 +289,9 @@ export default function Home() {
             <div className="flex flex-wrap items-center justify-center gap-3 md:gap-5 text-[11px] md:text-sm text-text-secondary">
               <span>Coming 2026</span>
               <span className="text-white/20">·</span>
-              <span>macOS only</span>
+              <span>Designed for Mac</span>
               <span className="text-white/20">·</span>
-              <span>Built in Germany</span>
+              <span>Made in Germany</span>
             </div>
 
             {/* Copyright */}

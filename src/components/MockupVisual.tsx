@@ -104,7 +104,7 @@ export function MockupVisual() {
   return (
     <div className="relative w-full max-w-2xl mx-auto mt-12 md:mt-20 px-4">
       {/* Ambient glow */}
-      <div className="absolute -inset-4 md:-inset-8 bg-accent/5 rounded-3xl blur-3xl" />
+      <div className="absolute -inset-4 md:-inset-8 bg-white/[0.02] rounded-3xl blur-3xl" />
 
       {/* macOS Window */}
       <motion.div
@@ -131,7 +131,7 @@ export function MockupVisual() {
             {/* Sidebar - Hidden on mobile */}
             <div className="hidden md:flex flex-col gap-2 w-36">
               <div className="h-7 bg-white/5 rounded w-full" />
-              <div className="h-5 bg-accent/20 rounded w-3/4" />
+              <div className="h-5 bg-white/10 rounded w-3/4" />
               <div className="h-5 bg-white/5 rounded w-5/6" />
               <div className="h-5 bg-white/5 rounded w-2/3" />
               <div className="mt-3 h-5 bg-white/5 rounded w-full" />
@@ -142,7 +142,7 @@ export function MockupVisual() {
             <div className="flex-1 flex flex-col gap-2 md:gap-3">
               {/* Email header */}
               <div className="flex items-center gap-2 md:gap-3 pb-2 md:pb-3 border-b border-white/5">
-                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-br from-accent/30 to-purple-500/30" />
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/10" />
                 <div className="flex-1 min-w-0">
                   <div className="h-3 md:h-4 bg-white/15 rounded w-24 md:w-32 mb-1.5" />
                   <div className="h-2.5 md:h-3 bg-white/5 rounded w-32 md:w-48" />
@@ -184,15 +184,15 @@ export function MockupVisual() {
           transition={{ duration: 0.35, delay: 0.25, ease: "easeOut" }}
           className="absolute bottom-3 md:bottom-5 left-3 right-3 md:left-5 md:right-5"
         >
-          <div className="relative rounded-xl md:rounded-2xl border border-accent/40 bg-[#0a0a0a]/95 backdrop-blur-xl overflow-hidden shadow-lg shadow-accent/10">
+          <div className="relative rounded-xl md:rounded-2xl border border-white/15 bg-[#0a0a0a]/95 backdrop-blur-xl overflow-hidden shadow-lg shadow-black/20">
             {/* Glow effect */}
-            <div className="absolute inset-0 -z-10 rounded-xl md:rounded-2xl bg-accent/5 blur-xl" />
+            <div className="absolute inset-0 -z-10 rounded-xl md:rounded-2xl bg-white/[0.02] blur-xl" />
 
             {/* Mode Toggle */}
             <div className="flex items-center justify-between px-3 md:px-4 py-2.5 md:py-3 border-b border-white/5">
               <div className="flex items-center gap-2 md:gap-3">
                 {/* Warp Flow icon */}
-                <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-gradient-to-br from-accent to-cyan-400 flex items-center justify-center shadow-md shadow-accent/20">
+                <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-accent flex items-center justify-center shadow-md shadow-black/30">
                   <svg
                     width="14"
                     height="14"
@@ -213,7 +213,7 @@ export function MockupVisual() {
                   <button
                     className={`px-2.5 md:px-3 py-1 md:py-1.5 rounded-md text-[10px] md:text-xs font-medium transition-all ${
                       currentWorkflow.mode === "warps"
-                        ? "bg-accent text-white shadow-sm"
+                        ? "bg-white/15 text-white shadow-sm"
                         : "text-text-secondary hover:text-text-primary"
                     }`}
                   >
@@ -222,7 +222,7 @@ export function MockupVisual() {
                   <button
                     className={`px-2.5 md:px-3 py-1 md:py-1.5 rounded-md text-[10px] md:text-xs font-medium transition-all ${
                       currentWorkflow.mode === "chat"
-                        ? "bg-accent text-white shadow-sm"
+                        ? "bg-white/15 text-white shadow-sm"
                         : "text-text-secondary hover:text-text-primary"
                     }`}
                   >
@@ -261,12 +261,12 @@ export function MockupVisual() {
                               animate={{
                                 opacity: 1,
                                 scale: 1,
-                                borderColor: isSelected ? "rgba(0, 102, 255, 0.6)" : "rgba(255,255,255,0.05)"
+                                borderColor: isSelected ? "rgba(255, 255, 255, 0.25)" : "rgba(255,255,255,0.05)"
                               }}
                               transition={{ delay: i * 0.05 }}
                               className={`p-2.5 md:p-3 rounded-lg border cursor-pointer transition-all ${
                                 isSelected
-                                  ? "border-accent/60 bg-accent/15"
+                                  ? "border-white/25 bg-white/10"
                                   : "border-white/5 bg-white/[0.02] hover:border-white/10"
                               }`}
                             >
@@ -294,7 +294,7 @@ export function MockupVisual() {
                           <motion.div
                             animate={{ rotate: 360 }}
                             transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                            className="w-5 h-5 border-2 border-accent/30 border-t-accent rounded-full"
+                            className="w-5 h-5 border-2 border-accent/20 border-t-accent rounded-full"
                           />
                           <span className="text-xs md:text-sm text-text-secondary">Processing...</span>
                         </div>
@@ -309,8 +309,8 @@ export function MockupVisual() {
                         className="p-3 md:p-4 rounded-lg bg-white/[0.02] border border-white/5"
                       >
                         <div className="flex items-center gap-2 mb-2">
-                          <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                          <span className="text-[10px] md:text-xs text-emerald-400 font-medium">Result</span>
+                          <div className="w-1.5 h-1.5 rounded-full bg-white/60" />
+                          <span className="text-[10px] md:text-xs text-white/60 font-medium">Result</span>
                         </div>
                         <pre className="text-[11px] md:text-xs text-text-secondary whitespace-pre-wrap font-sans leading-relaxed">
                           {currentWorkflow.output}
@@ -329,7 +329,7 @@ export function MockupVisual() {
                   >
                     {/* User message */}
                     <div className="flex justify-end">
-                      <div className="bg-accent/20 rounded-xl rounded-br-sm px-3 py-2 max-w-[85%]">
+                      <div className="bg-white/10 rounded-xl rounded-br-sm px-3 py-2 max-w-[85%]">
                         <p className="text-xs md:text-sm text-text-primary">{chatDemo.userMessage}</p>
                       </div>
                     </div>
@@ -355,7 +355,7 @@ export function MockupVisual() {
                               <motion.span
                                 animate={{ opacity: [1, 0] }}
                                 transition={{ duration: 0.4, repeat: Infinity }}
-                                className="inline-block w-0.5 h-3 bg-accent ml-0.5 align-middle"
+                                className="inline-block w-0.5 h-3 bg-white/60 ml-0.5 align-middle"
                               />
                             )}
                           </p>
@@ -391,15 +391,15 @@ export function MockupVisual() {
         className="flex flex-wrap justify-center gap-4 md:gap-6 mt-6 md:mt-8 text-[10px] md:text-xs text-text-secondary"
       >
         <div className="flex items-center gap-1.5 md:gap-2">
-          <div className="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-accent" />
+          <div className="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-white/40" />
           <span>Warps for actions</span>
         </div>
         <div className="flex items-center gap-1.5 md:gap-2">
-          <div className="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-purple-400" />
+          <div className="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-white/40" />
           <span>Chat for questions</span>
         </div>
         <div className="flex items-center gap-1.5 md:gap-2">
-          <div className="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-cyan-400" />
+          <div className="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-white/40" />
           <span>Context-aware</span>
         </div>
       </motion.div>

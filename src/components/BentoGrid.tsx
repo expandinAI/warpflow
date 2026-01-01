@@ -56,26 +56,26 @@ function TypingDraft() {
           initial={{ width: 0 }}
           animate={{ width: "100%" }}
           transition={{ duration: 0.6, delay: 0.15 }}
-          className="h-2 rounded-full bg-gradient-to-r from-purple-400/40 to-transparent overflow-hidden"
+          className="h-2 rounded-full bg-gradient-to-r from-white/30 to-transparent overflow-hidden"
         />
         <motion.div
           initial={{ width: 0 }}
           animate={{ width: "85%" }}
           transition={{ duration: 0.5, delay: 0.25 }}
-          className="h-2 rounded-full bg-gradient-to-r from-purple-400/30 to-transparent overflow-hidden"
+          className="h-2 rounded-full bg-gradient-to-r from-white/20 to-transparent overflow-hidden"
         />
         <motion.div
           initial={{ width: 0 }}
           animate={{ width: "70%" }}
           transition={{ duration: 0.4, delay: 0.35 }}
-          className="h-2 rounded-full bg-gradient-to-r from-purple-400/20 to-transparent overflow-hidden"
+          className="h-2 rounded-full bg-gradient-to-r from-white/10 to-transparent overflow-hidden"
         />
       </div>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: [0, 1, 0] }}
         transition={{ duration: 0.8, repeat: Infinity, delay: 0.5 }}
-        className="absolute bottom-0 right-0 w-0.5 h-4 bg-purple-400"
+        className="absolute bottom-0 right-0 w-0.5 h-4 bg-white/50"
       />
     </div>
   );
@@ -96,10 +96,10 @@ export function BentoGrid() {
           className="text-center mb-10 md:mb-14"
         >
           <h2 className="text-3xl md:text-5xl font-semibold tracking-tight text-text-primary">
-            First Warps for Mail
+            Starting with Mail
           </h2>
           <p className="mt-3 md:mt-4 text-base md:text-lg text-text-secondary max-w-md mx-auto">
-            Email, reimagined. Each Warp is a shortcut to done.
+            Email that gets out of your way. More apps coming soon.
           </p>
         </motion.div>
 
@@ -108,20 +108,20 @@ export function BentoGrid() {
 
           {/* ===== SUMMARIZE - Large Feature Card ===== */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.4, delay: 0.05 }}
+            initial={{ opacity: 0, y: 30, scale: 0.95 }}
+            animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+            transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
             className="col-span-4 md:col-span-4 row-span-1 md:row-span-1 relative group"
           >
-            <div className="relative h-full min-h-[280px] md:min-h-[320px] p-6 md:p-8 rounded-3xl bg-gradient-to-br from-blue-600/20 via-blue-500/10 to-transparent border border-white/10 overflow-hidden">
-              {/* Glow */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/20 rounded-full blur-[100px] -z-10" />
+            <div className="relative h-full min-h-[280px] md:min-h-[320px] p-6 md:p-8 rounded-3xl bg-white/[0.02] border border-white/10 overflow-hidden hover:border-white/20 transition-colors">
+              {/* Subtle glow */}
+              <div className="absolute top-0 right-0 w-64 h-64 bg-white/[0.02] rounded-full blur-[100px] -z-10" />
 
               <div className="flex flex-col md:flex-row h-full gap-6">
                 {/* Left: Text */}
                 <div className="flex-1 flex flex-col">
-                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center mb-4 shadow-lg shadow-blue-500/25">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-white/10 flex items-center justify-center mb-4 border border-white/10">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-text-primary">
                       <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
                       <polyline points="14 2 14 8 20 8" />
                     </svg>
@@ -131,12 +131,12 @@ export function BentoGrid() {
                     Summarize
                   </h3>
                   <p className="text-sm md:text-base text-text-secondary mb-4 max-w-xs">
-                    Long email? Get the TL;DR in 2 seconds. Action items extracted automatically.
+                    Long thread? Key points and action items, instantly.
                   </p>
 
                   <div className="mt-auto">
-                    <span className="inline-flex items-center gap-1.5 text-xs text-blue-400">
-                      <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+                    <span className="inline-flex items-center gap-1.5 text-xs text-text-secondary">
+                      <span className="w-1.5 h-1.5 rounded-full bg-white/30" />
                       Instant extraction
                     </span>
                   </div>
@@ -154,11 +154,11 @@ export function BentoGrid() {
                       initial={{ opacity: 0, y: 15, rotate: 0 }}
                       animate={isInView ? { opacity: 1, y: 0, rotate: 3 } : {}}
                       transition={{ delay: 0.2, duration: 0.4 }}
-                      className="relative rounded-xl bg-[#0a0a0a] border border-blue-500/30 p-4 shadow-xl shadow-blue-500/10"
+                      className="relative rounded-xl bg-[#0a0a0a] border border-white/20 p-4 shadow-xl"
                     >
                       <div className="flex items-center gap-2 mb-3">
-                        <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                        <span className="text-[10px] text-emerald-400 font-medium">Summary</span>
+                        <div className="w-1.5 h-1.5 rounded-full bg-white/40" />
+                        <span className="text-[10px] text-text-secondary font-medium">Summary</span>
                       </div>
                       <SummaryOutput />
                     </motion.div>
@@ -170,17 +170,17 @@ export function BentoGrid() {
 
           {/* ===== DRAFT REPLY - Tall Card ===== */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.4, delay: 0.1 }}
+            initial={{ opacity: 0, y: 30, scale: 0.95 }}
+            animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+            transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
             className="col-span-2 row-span-1 relative group"
           >
-            <div className="relative h-full min-h-[280px] md:min-h-[320px] p-5 md:p-6 rounded-3xl bg-gradient-to-br from-purple-600/20 via-purple-500/10 to-transparent border border-white/10 overflow-hidden">
-              {/* Glow */}
-              <div className="absolute bottom-0 left-0 w-48 h-48 bg-purple-500/20 rounded-full blur-[80px] -z-10" />
+            <div className="relative h-full min-h-[280px] md:min-h-[320px] p-5 md:p-6 rounded-3xl bg-white/[0.02] border border-white/10 overflow-hidden hover:border-white/20 transition-colors">
+              {/* Subtle glow */}
+              <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/[0.02] rounded-full blur-[80px] -z-10" />
 
-              <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-400 flex items-center justify-center mb-4 shadow-lg shadow-purple-500/25">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <div className="w-10 h-10 rounded-2xl bg-white/10 flex items-center justify-center mb-4 border border-white/10">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-text-primary">
                   <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
                   <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
                 </svg>
@@ -190,7 +190,7 @@ export function BentoGrid() {
                 Draft Reply
               </h3>
               <p className="text-xs md:text-sm text-text-secondary mb-4">
-                Say what you want. Warp Flow writes it.
+                Tell us what to say. We write it for you.
               </p>
 
               {/* Typing visual */}
@@ -206,15 +206,15 @@ export function BentoGrid() {
 
           {/* Triage */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.4, delay: 0.15 }}
+            initial={{ opacity: 0, y: 25, scale: 0.95 }}
+            animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+            transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
             className="col-span-2 relative group"
           >
-            <div className="relative h-full min-h-[160px] md:min-h-[180px] p-5 md:p-6 rounded-3xl bg-gradient-to-br from-amber-600/15 via-amber-500/5 to-transparent border border-white/10 overflow-hidden">
+            <div className="relative h-full min-h-[160px] md:min-h-[180px] p-5 md:p-6 rounded-3xl bg-white/[0.02] border border-white/10 overflow-hidden hover:border-white/20 transition-colors">
               <div className="flex items-start justify-between mb-3">
-                <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-500 to-orange-400 flex items-center justify-center shadow-lg shadow-amber-500/20">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5">
+                <div className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center border border-white/10">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-text-primary">
                     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
                   </svg>
                 </div>
@@ -234,15 +234,15 @@ export function BentoGrid() {
 
           {/* Voice */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.4, delay: 0.2 }}
+            initial={{ opacity: 0, y: 25, scale: 0.95 }}
+            animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+            transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
             className="col-span-2 relative group"
           >
-            <div className="relative h-full min-h-[160px] md:min-h-[180px] p-5 md:p-6 rounded-3xl bg-gradient-to-br from-emerald-600/15 via-emerald-500/5 to-transparent border border-white/10 overflow-hidden">
+            <div className="relative h-full min-h-[160px] md:min-h-[180px] p-5 md:p-6 rounded-3xl bg-white/[0.02] border border-white/10 overflow-hidden hover:border-white/20 transition-colors">
               <div className="flex items-start justify-between mb-3">
-                <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-400 flex items-center justify-center shadow-lg shadow-emerald-500/20">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5">
+                <div className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center border border-white/10">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-text-primary">
                     <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
                     <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
                     <line x1="12" y1="19" x2="12" y2="23" />
@@ -264,12 +264,12 @@ export function BentoGrid() {
 
           {/* More Apps */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.4, delay: 0.25 }}
+            initial={{ opacity: 0, y: 25, scale: 0.95 }}
+            animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+            transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
             className="col-span-2 relative group"
           >
-            <div className="relative h-full min-h-[160px] md:min-h-[180px] p-5 md:p-6 rounded-3xl bg-white/[0.02] border border-white/10 overflow-hidden flex flex-col justify-between">
+            <div className="relative h-full min-h-[160px] md:min-h-[180px] p-5 md:p-6 rounded-3xl bg-white/[0.02] border border-white/10 overflow-hidden hover:border-white/20 transition-colors flex flex-col justify-between">
               <div>
                 <h3 className="text-lg md:text-xl font-semibold text-text-primary mb-1">
                   More Apps
