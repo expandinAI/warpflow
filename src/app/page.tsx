@@ -10,8 +10,9 @@ import { BentoGrid } from "@/components/BentoGrid";
 import { MockupVisual } from "@/components/MockupVisual";
 import { CursorGlow } from "@/components/CursorGlow";
 import { MeshGradient } from "@/components/MeshGradient";
-import { WarpRing } from "@/components/WarpRing";
 import { FlowLines } from "@/components/FlowLines";
+import { WarpText } from "@/components/WarpText";
+import { WarpLogo } from "@/components/WarpLogo";
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -43,27 +44,7 @@ export default function Home() {
           transition={{ duration: 0.4 }}
           className="flex items-center justify-center gap-2 md:gap-2.5 mb-6 md:mb-12"
         >
-          <div className="relative">
-            <WarpRing />
-            <motion.div
-              className="relative w-8 h-8 md:w-9 md:h-9 rounded-xl bg-accent flex items-center justify-center shadow-lg shadow-black/30"
-              whileHover={{ scale: 1.05 }}
-            >
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="white"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="md:w-[18px] md:h-[18px]"
-            >
-              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-            </svg>
-          </motion.div>
-          </div>
+          <WarpLogo />
           <span className="text-text-primary font-semibold text-lg md:text-xl tracking-tight">
             Warp Flow
           </span>
@@ -93,13 +74,11 @@ export default function Home() {
             className="text-[2.75rem] leading-[1.1] md:text-6xl lg:text-7xl font-bold tracking-tight text-text-primary"
           >
             <span className="relative inline-block">
-              <span className="text-accent">Warp</span>
+              <WarpText className="text-accent">Warp</WarpText>
             </span>{" "}
             into{" "}
             <span className="relative inline-block">
-              <span className="text-accent">
-                Flow
-              </span>
+              <WarpText className="text-accent">Flow</WarpText>
               {/* Subtle glow behind text - only on desktop */}
               <span
                 className="absolute -inset-2 bg-accent/20 blur-2xl -z-10 rounded-full hidden md:block"
