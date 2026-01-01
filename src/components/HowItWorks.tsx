@@ -116,7 +116,7 @@ export function HowItWorks() {
                 className="relative group"
               >
                 {/* Step Card */}
-                <div className="relative p-5 md:p-6 rounded-xl md:rounded-2xl bg-white/[0.02] border border-white/5 backdrop-blur-sm hover:border-white/20 transition-all duration-300">
+                <div className="relative h-full p-5 md:p-6 rounded-xl md:rounded-2xl bg-white/[0.02] border border-white/5 backdrop-blur-sm hover:border-white/20 transition-all duration-300">
                   {/* Content */}
                   <div className="relative flex md:flex-col items-start gap-4 md:gap-0">
                     {/* Number badge */}
