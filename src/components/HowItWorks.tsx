@@ -95,13 +95,13 @@ export function HowItWorks() {
 
         {/* Timeline Visualization */}
         <div className="relative">
-          {/* Connecting line */}
-          <div className="hidden md:block absolute top-24 left-0 right-0 h-px">
+          {/* Connecting line - clean fade */}
+          <div className="hidden md:block absolute top-24 left-[15%] right-[15%] h-px overflow-hidden">
             <motion.div
-              initial={{ scaleX: 0 }}
-              animate={isInView ? { scaleX: 1 } : {}}
-              transition={{ duration: 0.6, delay: 0.2, ease: "easeInOut" }}
-              className="h-full bg-gradient-to-r from-transparent via-accent/30 to-transparent origin-left"
+              initial={{ opacity: 0 }}
+              animate={isInView ? { opacity: 1 } : {}}
+              transition={{ duration: 1, delay: 0.4 }}
+              className="h-full w-full bg-white/10"
             />
           </div>
 
@@ -116,7 +116,7 @@ export function HowItWorks() {
                 className="relative group"
               >
                 {/* Step Card */}
-                <div className="relative p-5 md:p-6 rounded-xl md:rounded-2xl bg-white/[0.02] border border-white/5 backdrop-blur-sm hover:border-white/20 transition-all duration-300">
+                <div className="relative h-full p-5 md:p-6 rounded-xl md:rounded-2xl bg-white/[0.02] border border-white/5 backdrop-blur-sm hover:border-white/20 transition-all duration-300">
                   {/* Content */}
                   <div className="relative flex md:flex-col items-start gap-4 md:gap-0">
                     {/* Number badge */}
