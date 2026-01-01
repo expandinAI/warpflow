@@ -76,7 +76,7 @@ export function HowItWorks() {
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-text-primary leading-tight px-2">
             You choose the destination.
             <br />
-            <span className="bg-gradient-to-r from-accent via-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="text-accent">
               Warp Flow knows the way.
             </span>
           </h2>
@@ -127,7 +127,7 @@ export function HowItWorks() {
                         stiffness: 300,
                         delay: 0.3 + index * 0.1
                       }}
-                      className="w-11 h-11 md:w-12 md:h-12 rounded-xl bg-gradient-to-br from-accent to-blue-400 flex items-center justify-center md:mb-4 shadow-md shadow-accent/20 shrink-0"
+                      className="w-11 h-11 md:w-12 md:h-12 rounded-xl bg-accent flex items-center justify-center md:mb-4 shadow-md shadow-accent/20 shrink-0"
                     >
                       <span className="text-white [&>svg]:w-5 [&>svg]:h-5 md:[&>svg]:w-6 md:[&>svg]:h-6">{step.icon}</span>
                     </motion.div>

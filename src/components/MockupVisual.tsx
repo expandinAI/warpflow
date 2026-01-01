@@ -142,7 +142,7 @@ export function MockupVisual() {
             <div className="flex-1 flex flex-col gap-2 md:gap-3">
               {/* Email header */}
               <div className="flex items-center gap-2 md:gap-3 pb-2 md:pb-3 border-b border-white/5">
-                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-br from-accent/30 to-purple-500/30" />
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/10" />
                 <div className="flex-1 min-w-0">
                   <div className="h-3 md:h-4 bg-white/15 rounded w-24 md:w-32 mb-1.5" />
                   <div className="h-2.5 md:h-3 bg-white/5 rounded w-32 md:w-48" />
@@ -192,7 +192,7 @@ export function MockupVisual() {
             <div className="flex items-center justify-between px-3 md:px-4 py-2.5 md:py-3 border-b border-white/5">
               <div className="flex items-center gap-2 md:gap-3">
                 {/* Warp Flow icon */}
-                <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-gradient-to-br from-accent to-cyan-400 flex items-center justify-center shadow-md shadow-accent/20">
+                <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg bg-accent flex items-center justify-center shadow-md shadow-accent/20">
                   <svg
                     width="14"
                     height="14"
@@ -395,11 +395,11 @@ export function MockupVisual() {
           <span>Warps for actions</span>
         </div>
         <div className="flex items-center gap-1.5 md:gap-2">
-          <div className="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-purple-400" />
+          <div className="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-white/40" />
           <span>Chat for questions</span>
         </div>
         <div className="flex items-center gap-1.5 md:gap-2">
-          <div className="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-cyan-400" />
+          <div className="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-white/40" />
           <span>Context-aware</span>
         </div>
       </motion.div>

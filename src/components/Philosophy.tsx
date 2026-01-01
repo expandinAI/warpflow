@@ -55,13 +55,13 @@ export function Philosophy() {
       <div className="absolute inset-0 -z-10">
         <motion.div
           initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 0.5 } : {}}
+          animate={isInView ? { opacity: 0.3 } : {}}
           transition={{ duration: 0.8 }}
-          className="absolute top-0 right-0 w-[600px] h-[600px] bg-purple-500/5 rounded-full blur-[200px]"
+          className="absolute top-0 right-0 w-[600px] h-[600px] bg-white/[0.02] rounded-full blur-[200px]"
         />
         <motion.div
           initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 0.5 } : {}}
+          animate={isInView ? { opacity: 0.3 } : {}}
           transition={{ duration: 0.8, delay: 0.1 }}
           className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[150px]"
         />
@@ -86,7 +86,7 @@ export function Philosophy() {
 
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-text-primary leading-tight mb-8">
             Why we&apos;re building{" "}
-            <span className="bg-gradient-to-r from-accent via-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="text-accent">
               Warp Flow
             </span>
           </h2>
@@ -138,7 +138,7 @@ export function Philosophy() {
                 transition={{ duration: 0.4, delay: 0.3 }}
               >
                 You say what you want. Warp Flow takes you there. You stay in{" "}
-                <span className="bg-gradient-to-r from-accent to-blue-400 bg-clip-text text-transparent font-semibold">
+                <span className="text-accent font-semibold">
                   flow
                 </span>
                 {" "}– the state where work becomes effortless.
@@ -168,9 +168,9 @@ export function Philosophy() {
               transition={{ duration: 0.4, delay: 0.15 + index * 0.08 }}
               className="group"
             >
-              <div className="relative h-full p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-accent/20 transition-all duration-500">
+              <div className="relative h-full p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-white/20 transition-all duration-500">
                 {/* Glow effect */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 rounded-2xl bg-white/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                 <div className="relative">
                   {/* Icon */}
@@ -182,7 +182,7 @@ export function Philosophy() {
                       stiffness: 300,
                       delay: 0.2 + index * 0.08
                     }}
-                    className="w-14 h-14 rounded-xl bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 flex items-center justify-center mb-6 text-accent group-hover:border-accent/30 transition-colors duration-500"
+                    className="w-14 h-14 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 text-accent group-hover:border-white/20 transition-colors duration-500"
                   >
                     {principle.icon}
                   </motion.div>
@@ -211,7 +211,7 @@ export function Philosophy() {
         >
           <p className="text-2xl md:text-3xl text-text-secondary font-light tracking-wide">
             No menus. No mouse.{" "}
-            <span className="bg-gradient-to-r from-accent to-blue-400 bg-clip-text text-transparent font-semibold">
+            <span className="text-accent font-semibold">
               Just flow.
             </span>
           </p>

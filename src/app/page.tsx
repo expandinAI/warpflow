@@ -39,7 +39,7 @@ export default function Home() {
           className="flex items-center justify-center gap-2 md:gap-2.5 mb-6 md:mb-12"
         >
           <motion.div
-            className="w-8 h-8 md:w-9 md:h-9 rounded-xl bg-gradient-to-br from-accent to-cyan-400 flex items-center justify-center shadow-lg shadow-accent/25"
+            className="w-8 h-8 md:w-9 md:h-9 rounded-xl bg-accent flex items-center justify-center shadow-lg shadow-accent/20"
             whileHover={{ scale: 1.05 }}
           >
             <svg
@@ -86,13 +86,12 @@ export default function Home() {
           >
             Warp into{" "}
             <span className="relative inline-block">
-              {/* Gradient text with smooth color shift */}
-              <span className="bg-gradient-to-r from-accent via-cyan-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="text-accent">
                 Flow
               </span>
               {/* Subtle glow behind text - only on desktop */}
               <span
-                className="absolute -inset-1 md:-inset-2 bg-gradient-to-r from-accent/20 via-cyan-400/15 to-purple-400/20 blur-xl md:blur-2xl -z-10 rounded-full hidden md:block"
+                className="absolute -inset-2 bg-accent/15 blur-2xl -z-10 rounded-full hidden md:block"
               />
             </span>
           </motion.h1>
@@ -217,7 +216,7 @@ export default function Home() {
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, type: "spring" }}
-            className="inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-accent to-cyan-400 shadow-xl shadow-accent/25 mb-6 md:mb-8"
+            className="inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-accent shadow-xl shadow-accent/20 mb-6 md:mb-8"
           >
             <svg
               width="24"
@@ -236,7 +235,7 @@ export default function Home() {
 
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-text-primary leading-tight mb-4 md:mb-6">
             Ready to{" "}
-            <span className="bg-gradient-to-r from-accent via-cyan-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="text-accent">
               Warp
             </span>
             ?
@@ -279,7 +278,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
             {/* Logo */}
             <div className="flex items-center gap-2">
-              <div className="w-6 h-6 md:w-7 md:h-7 rounded-lg bg-gradient-to-br from-accent to-cyan-400 flex items-center justify-center">
+              <div className="w-6 h-6 md:w-7 md:h-7 rounded-lg bg-accent flex items-center justify-center">
                 <svg
                   width="12"
                   height="12"
