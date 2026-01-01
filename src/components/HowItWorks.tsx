@@ -6,8 +6,8 @@ import { useRef } from "react";
 const steps = [
   {
     number: "1",
-    title: "Start a Warp",
-    description: "⌘J from anywhere. Warp Flow sees your context – which app, which document, which email.",
+    title: "Invoke",
+    description: "Press ⌘J anywhere. We already know what you're working on.",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
@@ -18,8 +18,8 @@ const steps = [
   },
   {
     number: "2",
-    title: "Follow the Flow",
-    description: "Pick a Warp. Answer only what matters. Everything else is inferred.",
+    title: "Choose",
+    description: "Select your action. We handle the details.",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
@@ -29,8 +29,8 @@ const steps = [
   },
   {
     number: "3",
-    title: "Get the Output",
-    description: "Result lands exactly where you need it. Back in your app. Task done.",
+    title: "Done",
+    description: "Your result, right where you need it.",
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="20 6 9 17 4 12" />
@@ -88,8 +88,8 @@ export function HowItWorks() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mt-4 md:mt-6 text-sm md:text-lg text-text-secondary max-w-xl mx-auto leading-relaxed px-4"
           >
-            A Warp isn&apos;t a button – it&apos;s a tunnel. You enter, it guides you through,
-            you emerge with the result. No menus. No mouse. Just flow.
+            Think of it as a shortcut to done. You tell us what you want.
+            We take you there. Instantly.
           </motion.p>
         </motion.div>
 

@@ -96,10 +96,10 @@ export function BentoGrid() {
           className="text-center mb-10 md:mb-14"
         >
           <h2 className="text-3xl md:text-5xl font-semibold tracking-tight text-text-primary">
-            First Warps for Mail
+            Starting with Mail
           </h2>
           <p className="mt-3 md:mt-4 text-base md:text-lg text-text-secondary max-w-md mx-auto">
-            Email, reimagined. Each Warp is a shortcut to done.
+            Email that gets out of your way. More apps coming soon.
           </p>
         </motion.div>
 
@@ -131,7 +131,7 @@ export function BentoGrid() {
                     Summarize
                   </h3>
                   <p className="text-sm md:text-base text-text-secondary mb-4 max-w-xs">
-                    Long email? Get the TL;DR in 2 seconds. Action items extracted automatically.
+                    Long thread? Key points and action items, instantly.
                   </p>
 
                   <div className="mt-auto">
@@ -190,7 +190,7 @@ export function BentoGrid() {
                 Draft Reply
               </h3>
               <p className="text-xs md:text-sm text-text-secondary mb-4">
-                Say what you want. Warp Flow writes it.
+                Tell us what to say. We write it for you.
               </p>
 
               {/* Typing visual */}

@@ -95,9 +95,9 @@ export default function Home() {
             transition={{ duration: 0.4, delay: 0.15 }}
             className="mt-4 md:mt-6 text-base md:text-xl text-text-secondary max-w-lg md:max-w-2xl mx-auto leading-relaxed px-2"
           >
-            <span className="text-text-primary font-medium">The AI Copilot for your Mac.</span>
+            <span className="text-text-primary font-medium">Your Mac, supercharged with AI.</span>
             <br className="hidden md:block" />{" "}
-            <span className="text-text-secondary">Context-aware. Voice-first. Zero switching.</span>
+            <span className="text-text-secondary">It sees your context. You stay in flow.</span>
           </motion.p>
 
           {/* Waitlist Form */}
@@ -120,7 +120,7 @@ export default function Home() {
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" className="opacity-50">
               <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" />
             </svg>
-            <span>macOS only</span>
+            <span>Designed for Mac</span>
           </motion.div>
         </div>
 
@@ -233,7 +233,7 @@ export default function Home() {
           </h2>
 
           <p className="text-base md:text-xl text-text-secondary max-w-lg mx-auto mb-8 md:mb-10 leading-relaxed px-2">
-            Join the waitlist and be among the first to experience the future of Mac productivity.
+            Be the first to experience a new way to work on your Mac.
           </p>
 
           <WaitlistForm />
@@ -249,13 +249,13 @@ export default function Home() {
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-white/50">
                 <polyline points="20 6 9 17 4 12" />
               </svg>
-              <span>Free early access</span>
+              <span>Early access</span>
             </div>
             <div className="flex items-center gap-1.5">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-white/50">
                 <polyline points="20 6 9 17 4 12" />
               </svg>
-              <span>No spam, ever</span>
+              <span>Privacy first</span>
             </div>
           </motion.div>
         </motion.div>
@@ -289,9 +289,9 @@ export default function Home() {
             <div className="flex flex-wrap items-center justify-center gap-3 md:gap-5 text-[11px] md:text-sm text-text-secondary">
               <span>Coming 2026</span>
               <span className="text-white/20">·</span>
-              <span>macOS only</span>
+              <span>Designed for Mac</span>
               <span className="text-white/20">·</span>
-              <span>Built in Germany</span>
+              <span>Made in Germany</span>
             </div>
 
             {/* Copyright */}

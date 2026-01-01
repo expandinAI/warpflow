@@ -6,7 +6,7 @@ import { useRef } from "react";
 const principles = [
   {
     title: "Keyboard-only",
-    description: "No mouse required. ⌘J opens. Tab switches. Enter confirms. Escape closes.",
+    description: "No mouse required. ⌘J opens. Tab navigates. Enter confirms.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="4" width="20" height="16" rx="2" ry="2" />
@@ -23,7 +23,7 @@ const principles = [
   },
   {
     title: "Context-aware",
-    description: "Warp Flow sees what you see. No copy-paste gymnastics. No explanations needed.",
+    description: "We see what you see. No copy-paste. No explanations needed.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10" />
@@ -36,7 +36,7 @@ const principles = [
   },
   {
     title: "Output-first",
-    description: "Every Warp ends with a result. Not a question. Not options. The output.",
+    description: "Every action ends with a result. Not a question. The output.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
@@ -116,10 +116,10 @@ export function Philosophy() {
                 animate={isInView ? { opacity: 1 } : {}}
                 transition={{ duration: 0.4, delay: 0.1 }}
               >
-                You know the feeling: A simple task – reply to an email, reschedule a meeting,
-                find a file. But the path to get there?{" "}
+                A simple task shouldn&apos;t feel complicated. Reply to an email. Reschedule a meeting.
+                Find a file.{" "}
                 <span className="text-text-primary font-medium">
-                  Menus, dialogs, clicks, context switches.
+                  Yet somehow, it always takes longer than it should.
                 </span>
               </motion.p>
 
@@ -129,7 +129,7 @@ export function Philosophy() {
                 transition={{ duration: 0.4, delay: 0.2 }}
                 className="text-2xl md:text-3xl text-text-primary font-medium"
               >
-                Warp Flow eliminates the path.
+                We&apos;re changing that.
               </motion.p>
 
               <motion.p
@@ -137,11 +137,11 @@ export function Philosophy() {
                 animate={isInView ? { opacity: 1 } : {}}
                 transition={{ duration: 0.4, delay: 0.3 }}
               >
-                You say what you want. Warp Flow takes you there. You stay in{" "}
+                Tell us what you need. We handle the rest. You stay in{" "}
                 <span className="text-accent font-semibold">
                   flow
                 </span>
-                {" "}– the state where work becomes effortless.
+                {" "}— where your best work happens.
               </motion.p>
             </div>
           </div>
@@ -155,7 +155,7 @@ export function Philosophy() {
           className="mb-12 text-center"
         >
           <h3 className="text-2xl md:text-3xl font-semibold text-text-primary">
-            Three Principles
+            Built on three principles
           </h3>
         </motion.div>
 
