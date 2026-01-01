@@ -13,6 +13,8 @@ import { MeshGradient } from "@/components/MeshGradient";
 import { FlowLines } from "@/components/FlowLines";
 import { WarpText } from "@/components/WarpText";
 import { WarpLogo } from "@/components/WarpLogo";
+import { Parallax } from "@/components/Parallax";
+import { AnimatedDivider } from "@/components/AnimatedDivider";
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -122,8 +124,13 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Mockup Visual */}
-        <MockupVisual />
+        {/* Mockup Visual with subtle parallax */}
+        <Parallax speed={0.15} className="hidden md:block">
+          <MockupVisual />
+        </Parallax>
+        <div className="md:hidden">
+          <MockupVisual />
+        </div>
 
         {/* Scroll hint - only on desktop */}
         <motion.div
@@ -148,30 +155,24 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Divider */}
-      <div className="w-full max-w-xs md:max-w-4xl mx-auto px-6">
-        <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-      </div>
+      {/* Animated Divider */}
+      <AnimatedDivider />
 
       {/* ============================================ */}
       {/* HOW IT WORKS SECTION */}
       {/* ============================================ */}
       <HowItWorks />
 
-      {/* Divider */}
-      <div className="w-full max-w-xs md:max-w-4xl mx-auto px-6">
-        <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-      </div>
+      {/* Animated Divider */}
+      <AnimatedDivider />
 
       {/* ============================================ */}
       {/* PHILOSOPHY SECTION */}
       {/* ============================================ */}
       <Philosophy />
 
-      {/* Divider */}
-      <div className="w-full max-w-xs md:max-w-4xl mx-auto px-6">
-        <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-      </div>
+      {/* Animated Divider */}
+      <AnimatedDivider />
 
       {/* ============================================ */}
       {/* BENTO GRID - WARPS PREVIEW */}

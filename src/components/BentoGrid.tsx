@@ -108,9 +108,9 @@ export function BentoGrid() {
 
           {/* ===== SUMMARIZE - Large Feature Card ===== */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.4, delay: 0.05 }}
+            initial={{ opacity: 0, y: 30, scale: 0.95 }}
+            animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+            transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
             className="col-span-4 md:col-span-4 row-span-1 md:row-span-1 relative group"
           >
             <div className="relative h-full min-h-[280px] md:min-h-[320px] p-6 md:p-8 rounded-3xl bg-white/[0.02] border border-white/10 overflow-hidden hover:border-white/20 transition-colors">
@@ -170,9 +170,9 @@ export function BentoGrid() {
 
           {/* ===== DRAFT REPLY - Tall Card ===== */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.4, delay: 0.1 }}
+            initial={{ opacity: 0, y: 30, scale: 0.95 }}
+            animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+            transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
             className="col-span-2 row-span-1 relative group"
           >
             <div className="relative h-full min-h-[280px] md:min-h-[320px] p-5 md:p-6 rounded-3xl bg-white/[0.02] border border-white/10 overflow-hidden hover:border-white/20 transition-colors">
@@ -206,9 +206,9 @@ export function BentoGrid() {
 
           {/* Triage */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.4, delay: 0.15 }}
+            initial={{ opacity: 0, y: 25, scale: 0.95 }}
+            animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+            transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
             className="col-span-2 relative group"
           >
             <div className="relative h-full min-h-[160px] md:min-h-[180px] p-5 md:p-6 rounded-3xl bg-white/[0.02] border border-white/10 overflow-hidden hover:border-white/20 transition-colors">
@@ -234,9 +234,9 @@ export function BentoGrid() {
 
           {/* Voice */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.4, delay: 0.2 }}
+            initial={{ opacity: 0, y: 25, scale: 0.95 }}
+            animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+            transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
             className="col-span-2 relative group"
           >
             <div className="relative h-full min-h-[160px] md:min-h-[180px] p-5 md:p-6 rounded-3xl bg-white/[0.02] border border-white/10 overflow-hidden hover:border-white/20 transition-colors">
@@ -264,9 +264,9 @@ export function BentoGrid() {
 
           {/* More Apps */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.4, delay: 0.25 }}
+            initial={{ opacity: 0, y: 25, scale: 0.95 }}
+            animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+            transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
             className="col-span-2 relative group"
           >
             <div className="relative h-full min-h-[160px] md:min-h-[180px] p-5 md:p-6 rounded-3xl bg-white/[0.02] border border-white/10 overflow-hidden hover:border-white/20 transition-colors flex flex-col justify-between">
