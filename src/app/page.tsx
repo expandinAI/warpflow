@@ -10,6 +10,8 @@ import { BentoGrid } from "@/components/BentoGrid";
 import { MockupVisual } from "@/components/MockupVisual";
 import { CursorGlow } from "@/components/CursorGlow";
 import { MeshGradient } from "@/components/MeshGradient";
+import { WarpRing } from "@/components/WarpRing";
+import { FlowLines } from "@/components/FlowLines";
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -31,17 +33,22 @@ export default function Home() {
       {/* HERO SECTION */}
       {/* ============================================ */}
       <section className="relative w-full min-h-screen flex flex-col px-5 md:px-6 pt-6 md:pt-8 pb-8">
-        {/* Logo / Brand */}
+        {/* Flow Lines - visual personality */}
+        <FlowLines />
+
+        {/* Logo / Brand with Warp Ring */}
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
           className="flex items-center justify-center gap-2 md:gap-2.5 mb-6 md:mb-12"
         >
-          <motion.div
-            className="w-8 h-8 md:w-9 md:h-9 rounded-xl bg-accent flex items-center justify-center shadow-lg shadow-accent/20"
-            whileHover={{ scale: 1.05 }}
-          >
+          <div className="relative">
+            <WarpRing />
+            <motion.div
+              className="relative w-8 h-8 md:w-9 md:h-9 rounded-xl bg-accent flex items-center justify-center shadow-lg shadow-accent/20"
+              whileHover={{ scale: 1.05 }}
+            >
             <svg
               width="16"
               height="16"
@@ -56,6 +63,7 @@ export default function Home() {
               <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
             </svg>
           </motion.div>
+          </div>
           <span className="text-text-primary font-semibold text-lg md:text-xl tracking-tight">
             Warp Flow
           </span>
