@@ -95,13 +95,13 @@ export function HowItWorks() {
 
         {/* Timeline Visualization */}
         <div className="relative">
-          {/* Connecting line */}
+          {/* Connecting line - subtle white gradient */}
           <div className="hidden md:block absolute top-24 left-0 right-0 h-px">
             <motion.div
               initial={{ scaleX: 0 }}
               animate={isInView ? { scaleX: 1 } : {}}
-              transition={{ duration: 0.6, delay: 0.2, ease: "easeInOut" }}
-              className="h-full bg-gradient-to-r from-transparent via-accent/30 to-transparent origin-left"
+              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+              className="h-full bg-gradient-to-r from-transparent via-white/20 to-transparent origin-left"
             />
           </div>
 
