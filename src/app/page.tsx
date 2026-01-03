@@ -124,15 +124,15 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Mockup Visual with subtle parallax */}
-        <Parallax speed={0.15} className="hidden md:block">
+        {/* Mockup Visual with subtle parallax - increased from 0.15 to 0.3 for more visible effect */}
+        <Parallax speed={0.3} className="hidden md:block">
           <MockupVisual />
         </Parallax>
         <div className="md:hidden">
           <MockupVisual />
         </div>
 
-        {/* Scroll hint - only on desktop */}
+        {/* Scroll hint - desktop version with mouse indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -151,6 +151,35 @@ export default function Home() {
                 className="w-1 h-1.5 rounded-full bg-white/40"
               />
             </div>
+          </motion.div>
+        </motion.div>
+
+        {/* Scroll hint - mobile version with swipe indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5, duration: 0.5 }}
+          className="md:hidden flex justify-center mt-6"
+        >
+          <motion.div
+            animate={{ y: [0, 4, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+            className="flex flex-col items-center gap-1.5"
+          >
+            <span className="text-[10px] text-text-secondary/40 uppercase tracking-wider">Scroll</span>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="text-text-secondary/30"
+            >
+              <path d="M12 5v14M19 12l-7 7-7-7" />
+            </svg>
           </motion.div>
         </motion.div>
       </section>

@@ -18,16 +18,16 @@ const config: Config = {
           secondary: "#666666",
         },
         accent: {
-          DEFAULT: "#3b82f6",
-          glow: "rgba(59,130,246,0.3)",
+          DEFAULT: "#0066FF",
+          glow: "rgba(0,102,255,0.3)",
         },
       },
       fontFamily: {
         sans: ["var(--font-geist-sans)", "Inter", "system-ui", "sans-serif"],
       },
       boxShadow: {
-        glow: "0 0 20px rgba(59,130,246,0.2)",
-        "glow-lg": "0 0 40px rgba(59,130,246,0.15)",
+        glow: "0 0 20px rgba(0,102,255,0.2)",
+        "glow-lg": "0 0 40px rgba(0,102,255,0.15)",
       },
       animation: {
         "fade-in": "fadeIn 0.5s ease-out forwards",
