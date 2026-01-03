@@ -111,7 +111,7 @@ export function BentoGrid() {
             initial={{ opacity: 0, y: 30, scale: 0.95 }}
             animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
             transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
-            className="col-span-4 md:col-span-4 row-span-1 md:row-span-1 relative group"
+            className="col-span-4 md:col-span-4 row-span-1 relative group"
           >
             <div className="relative h-full min-h-[280px] md:min-h-[320px] p-6 md:p-8 rounded-3xl bg-white/[0.02] border border-white/10 overflow-hidden hover:border-white/20 transition-colors">
               {/* Subtle glow */}

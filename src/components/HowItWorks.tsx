@@ -115,6 +115,32 @@ export function HowItWorks() {
                 transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
                 className="relative group"
               >
+                {/* Mobile arrow connector - shows between cards on mobile */}
+                {index < steps.length - 1 && (
+                  <div className="md:hidden absolute -bottom-4 left-1/2 -translate-x-1/2 z-10">
+                    <motion.div
+                      initial={{ opacity: 0, y: -5 }}
+                      animate={isInView ? { opacity: 1, y: 0 } : {}}
+                      transition={{ duration: 0.3, delay: 0.4 + index * 0.1 }}
+                      className="flex items-center justify-center w-8 h-8 rounded-full bg-bg-primary border border-white/10"
+                    >
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="text-text-secondary/50"
+                      >
+                        <path d="M12 5v14M19 12l-7 7-7-7" />
+                      </svg>
+                    </motion.div>
+                  </div>
+                )}
+
                 {/* Step Card */}
                 <div className="relative h-full p-5 md:p-6 rounded-xl md:rounded-2xl bg-white/[0.02] border border-white/5 backdrop-blur-sm hover:border-white/20 transition-all duration-300">
                   {/* Content */}

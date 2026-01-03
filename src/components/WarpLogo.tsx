@@ -3,9 +3,38 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { WarpRing } from "./WarpRing";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 export function WarpLogo() {
   const [isHovered, setIsHovered] = useState(false);
+  const prefersReducedMotion = useReducedMotion();
+
+  // Simplified version for reduced motion
+  if (prefersReducedMotion) {
+    return (
+      <div
+        className="relative cursor-pointer"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <div className={`relative w-8 h-8 md:w-9 md:h-9 rounded-xl bg-accent flex items-center justify-center shadow-lg shadow-black/30 overflow-hidden transition-transform duration-200 ${isHovered ? 'scale-105' : ''}`}>
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="white"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="md:w-[18px] md:h-[18px] relative z-10"
+          >
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+          </svg>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div

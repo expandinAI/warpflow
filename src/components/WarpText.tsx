@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 interface WarpTextProps {
   children: string;
@@ -10,6 +11,18 @@ interface WarpTextProps {
 
 export function WarpText({ children, className = "" }: WarpTextProps) {
   const [isHovered, setIsHovered] = useState(false);
+  const prefersReducedMotion = useReducedMotion();
+
+  // If user prefers reduced motion, just render plain text with subtle opacity change
+  if (prefersReducedMotion) {
+    return (
+      <span
+        className={`relative inline-block cursor-default transition-opacity duration-200 hover:opacity-80 ${className}`}
+      >
+        {children}
+      </span>
+    );
+  }
 
   return (
     <motion.span

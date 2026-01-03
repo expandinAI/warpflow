@@ -99,6 +99,16 @@ export function Philosophy() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="max-w-3xl mx-auto mb-24"
         >
+          {/* Section label */}
+          <motion.h3
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.4, delay: 0.15 }}
+            className="text-sm text-text-secondary/60 uppercase tracking-wider mb-4 text-center"
+          >
+            Our Story
+          </motion.h3>
+
           <div className="relative p-8 md:p-12 rounded-3xl bg-gradient-to-b from-white/[0.03] to-transparent border border-white/5">
             {/* Quote decoration */}
             <motion.div
@@ -106,6 +116,7 @@ export function Philosophy() {
               animate={isInView ? { opacity: 0.1, scale: 1 } : {}}
               transition={{ duration: 0.3, delay: 0.1 }}
               className="absolute -top-4 -left-2 text-8xl text-accent/30 font-serif"
+              aria-hidden="true"
             >
               &ldquo;
             </motion.div>
