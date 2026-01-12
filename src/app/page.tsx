@@ -124,7 +124,7 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Mockup Visual with subtle parallax - increased from 0.15 to 0.3 for more visible effect */}
+        {/* Mockup Visual with subtle parallax */}
         <Parallax speed={0.3} className="hidden md:block">
           <MockupVisual />
         </Parallax>

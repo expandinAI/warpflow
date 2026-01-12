@@ -1,7 +1,47 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion, useInView, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { useRef, ReactNode } from "react";
+
+// 3D Tilt Card Component (without spotlight)
+function TiltCard({ children, className = "" }: { children: ReactNode; className?: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  const mouseX = useMotionValue(0.5);
+  const mouseY = useMotionValue(0.5);
+
+  const springConfig = { stiffness: 150, damping: 20 };
+  const rotateX = useSpring(useTransform(mouseY, [0, 1], [6, -6]), springConfig);
+  const rotateY = useSpring(useTransform(mouseX, [0, 1], [-6, 6]), springConfig);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!ref.current) return;
+    const rect = ref.current.getBoundingClientRect();
+    mouseX.set((e.clientX - rect.left) / rect.width);
+    mouseY.set((e.clientY - rect.top) / rect.height);
+  };
+
+  const handleMouseLeave = () => {
+    mouseX.set(0.5);
+    mouseY.set(0.5);
+  };
+
+  return (
+    <motion.div
+      ref={ref}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{
+        rotateX,
+        rotateY,
+        transformStyle: "preserve-3d",
+      }}
+      className={`relative ${className}`}
+    >
+      {children}
+    </motion.div>
+  );
+}
 
 // Animated email lines component
 function EmailLines({ className }: { className?: string }) {
@@ -112,7 +152,9 @@ export function BentoGrid() {
             animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
             transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
             className="col-span-4 md:col-span-4 row-span-1 relative group"
+            style={{ perspective: 1000 }}
           >
+            <TiltCard>
             <div className="relative h-full min-h-[280px] md:min-h-[320px] p-6 md:p-8 rounded-3xl bg-white/[0.02] border border-white/10 overflow-hidden hover:border-white/20 transition-colors">
               {/* Subtle glow */}
               <div className="absolute top-0 right-0 w-64 h-64 bg-white/[0.02] rounded-full blur-[100px] -z-10" />
@@ -166,6 +208,7 @@ export function BentoGrid() {
                 </div>
               </div>
             </div>
+            </TiltCard>
           </motion.div>
 
           {/* ===== DRAFT REPLY - Tall Card ===== */}
@@ -174,7 +217,9 @@ export function BentoGrid() {
             animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
             transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
             className="col-span-2 row-span-1 relative group"
+            style={{ perspective: 1000 }}
           >
+            <TiltCard>
             <div className="relative h-full min-h-[280px] md:min-h-[320px] p-5 md:p-6 rounded-3xl bg-white/[0.02] border border-white/10 overflow-hidden hover:border-white/20 transition-colors">
               {/* Subtle glow */}
               <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/[0.02] rounded-full blur-[80px] -z-10" />
@@ -200,6 +245,7 @@ export function BentoGrid() {
                 </div>
               </div>
             </div>
+            </TiltCard>
           </motion.div>
 
           {/* ===== ROW 2: Three smaller cards ===== */}
@@ -210,7 +256,9 @@ export function BentoGrid() {
             animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
             transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
             className="col-span-2 relative group"
+            style={{ perspective: 1000 }}
           >
+            <TiltCard>
             <div className="relative h-full min-h-[160px] md:min-h-[180px] p-5 md:p-6 rounded-3xl bg-white/[0.02] border border-white/10 overflow-hidden hover:border-white/20 transition-colors">
               <div className="flex items-start justify-between mb-3">
                 <div className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center border border-white/10">
@@ -230,6 +278,7 @@ export function BentoGrid() {
                 Inbox zero, automatically.
               </p>
             </div>
+            </TiltCard>
           </motion.div>
 
           {/* Voice */}
@@ -238,7 +287,9 @@ export function BentoGrid() {
             animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
             transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
             className="col-span-2 relative group"
+            style={{ perspective: 1000 }}
           >
+            <TiltCard>
             <div className="relative h-full min-h-[160px] md:min-h-[180px] p-5 md:p-6 rounded-3xl bg-white/[0.02] border border-white/10 overflow-hidden hover:border-white/20 transition-colors">
               <div className="flex items-start justify-between mb-3">
                 <div className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center border border-white/10">
@@ -260,6 +311,7 @@ export function BentoGrid() {
                 Speak, don&apos;t type.
               </p>
             </div>
+            </TiltCard>
           </motion.div>
 
           {/* More Apps */}
@@ -268,7 +320,9 @@ export function BentoGrid() {
             animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
             transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
             className="col-span-2 relative group"
+            style={{ perspective: 1000 }}
           >
+            <TiltCard>
             <div className="relative h-full min-h-[160px] md:min-h-[180px] p-5 md:p-6 rounded-3xl bg-white/[0.02] border border-white/10 overflow-hidden hover:border-white/20 transition-colors flex flex-col justify-between">
               <div>
                 <h3 className="text-lg md:text-xl font-semibold text-text-primary mb-1">
@@ -294,6 +348,7 @@ export function BentoGrid() {
                 ))}
               </div>
             </div>
+            </TiltCard>
           </motion.div>
 
         </div>
