@@ -22,11 +22,7 @@ export function WarpLogo() {
             width="16"
             height="16"
             viewBox="0 0 24 24"
-            fill="none"
-            stroke="white"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
+            fill="white"
             className="md:w-[18px] md:h-[18px] relative z-10"
           >
             <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
@@ -74,11 +70,7 @@ export function WarpLogo() {
             width="16"
             height="16"
             viewBox="0 0 24 24"
-            fill="none"
-            stroke="#ff6b6b"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
+            fill="#ff6b6b"
             className="md:w-[18px] md:h-[18px]"
           >
             <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
@@ -97,11 +89,7 @@ export function WarpLogo() {
             width="16"
             height="16"
             viewBox="0 0 24 24"
-            fill="none"
-            stroke="#4ecdc4"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
+            fill="#4ecdc4"
             className="md:w-[18px] md:h-[18px]"
           >
             <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
@@ -113,11 +101,7 @@ export function WarpLogo() {
           width="16"
           height="16"
           viewBox="0 0 24 24"
-          fill="none"
-          stroke="white"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
+          fill="white"
           className="md:w-[18px] md:h-[18px] relative z-10"
           animate={isHovered ? {
             scale: [1, 0.9, 1.1, 1],
