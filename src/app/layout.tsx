@@ -13,6 +13,14 @@ export const metadata: Metadata = {
   description: "The AI Copilot for your Mac. Context-aware. Voice-first. Zero switching. Coming 2026.",
   keywords: ["AI", "Mac", "macOS", "productivity", "copilot", "voice", "assistant", "overlay"],
   authors: [{ name: "Warp Flow" }],
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: [
+      { url: "/apple-icon.svg", type: "image/svg+xml" },
+    ],
+  },
   openGraph: {
     title: "Warp Flow - Warp into Flow",
     description: "The AI Copilot for your Mac. Context-aware. Voice-first. Zero switching.",
